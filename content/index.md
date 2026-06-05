@@ -1,47 +1,19 @@
 ---
-title: Private Journal
+title: Private
 ---
 
-<style>
-#content {
-  display: none;
-}
-
-#gate {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-</style>
-
 <div id="gate">
-  <input id="pw" type="password" placeholder="password">
-  <br><br>
+  <input id="pw" type="password">
   <button onclick="check()">Unlock</button>
-
   <p id="msg"></p>
 </div>
 
 <script>
 function check() {
-  const pw = document.getElementById("pw").value;
-
-  if (pw === "1234") {
-    document.getElementById("msg").innerText = "OK";
-  } else {
-    document.getElementById("msg").innerText = "Wrong password";
-  }
-}
-</script>
-function check() {
-  const pw = document.getElementById("pw").value;
-
-  if (pw === "1234") {
+  if (document.getElementById("pw").value === "1234") {
     document.getElementById("gate").style.display = "none";
   } else {
-    document.getElementById("msg").innerText = "wrong password";
+    document.getElementById("msg").innerText = "wrong";
   }
 }
 </script>
