@@ -4,3 +4,7 @@
 footer {
   display: none !important;
 }
+
+body > *:not(#gate) {
+  display: none;
+}
