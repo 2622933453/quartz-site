@@ -36,13 +36,12 @@ function check() {
 }
 </script>
 function check() {
-  const pw = document.getElementById("0601").value;
+  const pw = document.getElementById("pw").value;
 
-  if (pw === "0601") {
+  if (pw === "1234") {
     document.getElementById("gate").style.display = "none";
-    document.getElementById("content").style.display = "block";
   } else {
-    document.getElementById("msg").innerText = "密码错误";
+    document.getElementById("msg").innerText = "wrong password";
   }
 }
 </script>
