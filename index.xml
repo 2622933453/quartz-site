@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 5</title>
+      <link>https://xh-diary.me</link>
+      <description>Last 10 notes on Quartz 5</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>diary</title>
+    <link>https://xh-diary.me/xh-diary.me/diary/</link>
+    <guid>https://xh-diary.me/xh-diary.me/diary/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 05 Jun 2026 07:52:44 GMT</pubDate>
+  </item><item>
+    <title>xh-diary.me</title>
+    <link>https://xh-diary.me/xh-diary.me/</link>
+    <guid>https://xh-diary.me/xh-diary.me/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 05 Jun 2026 07:52:44 GMT</pubDate>
+  </item><item>
+    <title>Tag Index</title>
+    <link>https://xh-diary.me/tags/</link>
+    <guid>https://xh-diary.me/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 05 Jun 2026 07:52:44 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://xh-diary.me/</link>
+    <guid>https://xh-diary.me/</guid>
+    <description><![CDATA[ 欢迎来到我的小站！. ]]></description>
+    <pubDate>Fri, 05 Jun 2026 07:51:46 GMT</pubDate>
+  </item><item>
+    <title>2026-06-05</title>
+    <link>https://xh-diary.me/xh-diary.me/diary/2026-06-05</link>
+    <guid>https://xh-diary.me/xh-diary.me/diary/2026-06-05</guid>
+    <description><![CDATA[ 11. ]]></description>
+    <pubDate>Fri, 05 Jun 2026 07:51:46 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
