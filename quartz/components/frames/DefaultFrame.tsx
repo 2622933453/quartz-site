@@ -19,7 +19,7 @@ export const DefaultFrame: PageFrame = {
     afterBody,
     left,
     right,
-    footer: Footer,
+    footer: footer: () => null,
   }: PageFrameProps) {
     return (
       <>
