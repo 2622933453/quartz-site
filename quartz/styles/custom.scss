@@ -5,6 +5,9 @@ footer {
   display: none !important;
 }
 
-body > *:not(#gate) {
-  display: none;
+#gate {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: 9999;
 }

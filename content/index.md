@@ -17,22 +17,24 @@ title: Private Journal
 </style>
 
 <div id="gate">
-  <h2>🔒 Enter Password</h2>
-
-  <input type="password" id="0601">
+  <input id="pw" type="password" placeholder="password">
+  <br><br>
   <button onclick="check()">Unlock</button>
 
-  <p id="msg" style="color:red;"></p>
-</div>
-
-<div id="content">
-  <h1>欢迎来到日记</h1>
-  <p>这里是你的内容入口</p>
-
-  <a href="./diary">进入日记</a>
+  <p id="msg"></p>
 </div>
 
 <script>
+function check() {
+  const pw = document.getElementById("pw").value;
+
+  if (pw === "1234") {
+    document.getElementById("msg").innerText = "OK";
+  } else {
+    document.getElementById("msg").innerText = "Wrong password";
+  }
+}
+</script>
 function check() {
   const pw = document.getElementById("0601").value;
 
