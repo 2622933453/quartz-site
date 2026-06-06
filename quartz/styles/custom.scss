@@ -15,7 +15,7 @@ footer {
   grid-template-columns: 3fr 1fr !important;
 }
 
-// 首页右侧图片：宽屏浮右，手机居中全宽
+// 首页右侧图片：宽屏浮右，手机显示在文字下方
 .about-image {
   float: right;
   width: 240px;
@@ -27,7 +27,16 @@ footer {
     display: block;
     width: 100%;
     max-width: 280px;
-    margin: 0 auto 1.5em;
+    margin: 1.5em auto 0;
+    order: 999;
+  }
+}
+
+// 手机端让含有 about-image 的 article 以 flex 列排布，使图片能通过 order 下沉到底部
+article:has(.about-image) {
+  @media all and ($mobile) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
