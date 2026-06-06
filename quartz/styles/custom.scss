@@ -5,3 +5,8 @@ footer {
   display: none !important;
 }
 
+// 隐藏文件夹/标签列表页里每条笔记前面的日期
+.section-li > .section .meta {
+  display: none !important;
+}
+
