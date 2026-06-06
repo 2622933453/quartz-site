@@ -17,9 +17,10 @@ footer {
 
 // 首页右侧图片：宽屏浮右，手机显示在文字下方
 .about-image {
-  float: right;
-  width: 320px;
-  margin: 0 0 1.5em 2em;
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 1.5em;
   border-radius: 8px;
 
   @media all and ($mobile) {
