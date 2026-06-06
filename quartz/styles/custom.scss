@@ -28,15 +28,19 @@ footer {
     width: 100%;
     max-width: 280px;
     margin: 1.5em auto 0;
-    order: 999;
   }
 }
 
-// 手机端让含有 about-image 的 article 以 flex 列排布，使图片能通过 order 下沉到底部
-article:has(.about-image) {
+// 手机端：图片所在的内容容器改为 flex 列，把图片（或包裹它的 p）推到底部
+.markdown-preview-view:has(.about-image) {
   @media all and ($mobile) {
     display: flex;
     flex-direction: column;
+
+    > .about-image,
+    > p:has(.about-image) {
+      order: 999;
+    }
   }
 }
 
