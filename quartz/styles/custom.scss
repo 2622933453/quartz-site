@@ -15,6 +15,34 @@ footer {
   grid-template-columns: 3fr 1fr !important;
 }
 
+// 首页图片 lightbox
+#about-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+
+  &.active {
+    display: flex;
+  }
+
+  img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 0;
+  }
+}
+
+.about-image {
+  cursor: zoom-in;
+}
+
 // 首页图片：右侧垂直居中
 .about-image {
   border-radius: 8px;
