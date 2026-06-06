@@ -1,24 +1,9 @@
 ---
-title: 小浩日记
+title: 入站必读
 ---
-<div id="gate">  <h2>🔒 Private Journal</h2>  <input id="pw" type="password">  <button onclick="check()">Unlock</button>  <p id="msg"></p></div><script>
-window.check = function () {
-  const gate = document.getElementById("gate");
-  const pw = document.getElementById("pw").value;
+你好呀，欢迎来到我的小站。这里是互联网广场里一个存放记忆和情绪的小房间。
 
-  if (pw === "1234") {
-    localStorage.setItem("unlocked", "true");
-    gate.style.display = "none";
-  } else {
-    document.getElementById("msg").innerText = "wrong password";
-  }
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  const gate = document.getElementById("gate");
-
-  if (localStorage.getItem("unlocked") === "true") {
-    gate.style.display = "none";
-  }
-});
-</script>
+在这里有一些小规矩希望你能遵守：
+1. 请不要公开分享和引用站内的内容
+2. 请不要在现实里和我谈论站内的内容（我可能会给你一个白眼！真的......）
+3. 请一定一定要静下心来阅读站内的内容
