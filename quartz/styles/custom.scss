@@ -10,3 +10,10 @@ footer {
   display: none !important;
 }
 
+// 文件夹列表页标题不换行
+.section-li .desc h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
