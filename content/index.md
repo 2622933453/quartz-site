@@ -1,7 +1,15 @@
 ---
 title: About
 ---
-<img class="about-image" src="11.jpg" alt="">
+<img class="about-image" id="daily-photo" src="11.jpg" alt="">
+<script>
+(function () {
+  var images = ["11.jpg"];
+  var dayNum = Math.floor(Date.now() / 86400000);
+  var img = document.getElementById("daily-photo");
+  if (img) img.src = images[dayNum % images.length];
+})();
+</script>
 
 你好！
 欢迎来到我的个人网站。
