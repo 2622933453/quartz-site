@@ -1,6 +1,8 @@
 ---
 title: About
 ---
+<img class="about-image" src="11.jpg" alt="">
+
 你好！
 欢迎来到我的个人网站。
 
