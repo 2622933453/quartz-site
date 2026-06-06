@@ -1,10 +1,10 @@
 ---
 title: About
 ---
-<img class="about-image" id="daily-photo" src="11.jpg" alt="">
+<img class="about-image" id="daily-photo" src="photos/1.jpg" alt="">
 <script>
 (function () {
-  var images = ["1.jpg", "2.jpg", "3.jpg",  "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg"  ];
+  var images = ["photos/1.jpg", "photos/2.jpg", "photos/3.jpg", "photos/4.jpg", "photos/5.jpg", "photos/6.jpg", "photos/7.jpg", "photos/8.jpg", "photos/9.jpg", "photos/10.jpg", "photos/11.jpg"];
   var dayNum = Math.floor(Date.now() / 86400000);
   var img = document.getElementById("daily-photo");
   if (img) img.src = images[dayNum % images.length];
