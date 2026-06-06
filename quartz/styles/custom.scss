@@ -15,16 +15,42 @@ footer {
   grid-template-columns: 3fr 1fr !important;
 }
 
-// 首页右侧图片：宽屏浮右，手机显示在文字下方
+// 首页图片：右侧垂直居中
 .about-image {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto 1.5em;
   border-radius: 8px;
 
   @media all and ($mobile) {
     display: none;
+  }
+}
+
+.markdown-preview-view:has(.about-image) {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 2em;
+
+  // 图片放右列，纵向撑满所有行，自身垂直居中
+  > .about-image,
+  > p:has(.about-image) {
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    align-self: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  > p:has(.about-image) > .about-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  // 其余内容放左列
+  > *:not(.about-image) {
+    grid-column: 1;
+  }
+
+  @media all and ($mobile) {
+    display: block;
   }
 }
 
