@@ -152,6 +152,8 @@ plugins:
     enabled: true
   - source: github:quartz-community/explorer
     enabled: true
+    options:
+      title: Somewhere
     layout:
       position: left
       priority: 50
