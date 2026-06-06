@@ -5,15 +5,13 @@ footer {
   display: none !important;
 }
 
-// 隐藏文件夹/标签列表页里每条笔记前面的日期
+// 隐藏文件夹/标签列表页里每条笔记前面的日期，并修正 grid 列宽
+// 原来是 fit-content(8em) 3fr 1fr 三列，隐藏 meta 后 desc 会顶到 8em 的第一列导致换行
+// 改为两列让 desc 拿到 3fr 的宽度
 .section-li > .section .meta {
   display: none !important;
 }
-
-// 文件夹列表页标题不换行
-.section-li .desc h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.section-li > .section {
+  grid-template-columns: 3fr 1fr !important;
 }
 
