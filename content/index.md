@@ -4,7 +4,7 @@ title: About
 <img class="about-image" id="daily-photo" src="11.jpg" alt="">
 <script>
 (function () {
-  var images = ["1.jpg", "2.jpg", "3.jpg",  "4.jpg"];
+  var images = ["1.jpg", "2.jpg", "3.jpg",  "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg"  ];
   var dayNum = Math.floor(Date.now() / 86400000);
   var img = document.getElementById("daily-photo");
   if (img) img.src = images[dayNum % images.length];
