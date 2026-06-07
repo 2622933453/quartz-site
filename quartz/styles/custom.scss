@@ -27,15 +27,25 @@ footer {
   }
 }
 
-// 手机端：把列从 auto 改成 1fr，确保内容区完整填满可用宽度
-// auto 列在有 min-width:100% 的子项时会触发循环依赖，被降级为 auto（内容最小宽度），
-// 导致轨道被内容撑宽进而产生右侧空白；1fr 强制按比例分配，不会被内容撑开。
+// 手机端右侧空白修复：
+// .explorer-content 是 position:absolute，其包含块 .sidebar.left(sticky)
+// 从视口 x=1rem 开始，所以 left:0 对应视口 x=1rem，加上 width:100vw 后
+// 右边缘落在 x=1rem+100vw，溢出 1rem。浏览器把页面宽度记为 viewport+1rem，
+// #quartz-body{margin:0 auto} 就会居中，造成两侧各缩 0.5rem 的空白。
+// 修复：
+//   1. explorer-content 用 left:-1rem 补偿，使布局范围回到 x=0~100vw
+//   2. #quartz-body 加 overflow-x:clip（不同于 hidden，不建立 scroll container
+//      所以不影响 .sidebar.left 的 sticky 定位），截断所有子元素横向溢出
 @media all and ($mobile) {
   .page > #quartz-body {
     grid-template-columns: 1fr !important;
+    overflow-x: clip;
   }
   .page > #quartz-body > .center {
     min-width: 0 !important;
+  }
+  .explorer .explorer-content {
+    left: -1rem !important;
   }
 }
 
