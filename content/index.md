@@ -1,7 +1,7 @@
 ---
 title: About
 ---
-<img class="about-image" id="daily-photo" src="photos/1.jpg" alt="">
+<img class="about-image" id="daily-photo" src="photos/3.jpg" alt="">
 
 <div id="about-lightbox">
   <img id="about-lightbox-img" src="" alt="">
@@ -9,10 +9,8 @@ title: About
 
 <script>
 (function () {
-  var images = ["photos/1.jpg", "photos/2.jpg", "photos/3.jpg", "photos/4.jpg", "photos/5.jpg", "photos/6.jpg", "photos/7.jpg", "photos/8.jpg", "photos/9.jpg", "photos/10.jpg", "photos/11.jpg"];
-  var dayNum = Math.floor(Date.now() / 86400000);
   var img = document.getElementById("daily-photo");
-  if (img) img.src = images[dayNum % images.length];
+  if (img) img.src = "photos/3.jpg";
 
   var lightbox = document.getElementById("about-lightbox");
   var lightboxImg = document.getElementById("about-lightbox-img");
