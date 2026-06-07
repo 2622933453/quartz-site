@@ -27,25 +27,32 @@ footer {
   }
 }
 
-// 手机端右侧空白修复：
-// .explorer-content 是 position:absolute，其包含块 .sidebar.left(sticky)
-// 从视口 x=1rem 开始，所以 left:0 对应视口 x=1rem，加上 width:100vw 后
-// 右边缘落在 x=1rem+100vw，溢出 1rem。浏览器把页面宽度记为 viewport+1rem，
-// #quartz-body{margin:0 auto} 就会居中，造成两侧各缩 0.5rem 的空白。
-// 修复：
-//   1. explorer-content 用 left:-1rem 补偿，使布局范围回到 x=0~100vw
-//   2. #quartz-body 加 overflow-x:clip（不同于 hidden，不建立 scroll container
-//      所以不影响 .sidebar.left 的 sticky 定位），截断所有子元素横向溢出
+// 手机端右侧空白修复（彻底方案）：
+// 根本原因：.explorer-content { position:absolute; left:0; width:100vw }
+// 其包含块 .sidebar.left(sticky) 在视口 x=1rem 处（因 #quartz-body padding:0 1rem）。
+// 所以 left:0 → 视口 x=1rem，右边缘 = 1rem+100vw = 视口+1rem，溢出！
+//
+// 彻底修复：把 #quartz-body 的水平 padding 去掉，改为 .center 和 .sidebar.left
+// 自己承担 padding。这样 sidebar 从 x=0 开始，left:0 = 视口左边缘，
+// width:100vw 右边缘 = 100vw = 视口右边缘，完全不溢出。
 @media all and ($mobile) {
   .page > #quartz-body {
     grid-template-columns: 1fr !important;
     overflow-x: clip;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .page > #quartz-body > .center {
     min-width: 0 !important;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  .page > #quartz-body > .sidebar.left {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
   .explorer .explorer-content {
-    left: -1rem !important;
+    left: 0 !important;
   }
 }
 
