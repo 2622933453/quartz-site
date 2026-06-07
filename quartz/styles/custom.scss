@@ -15,6 +15,15 @@ footer {
   grid-template-columns: 3fr 1fr !important;
 }
 
+// 右侧栏为空时，桌面端收起右列，内容区撑满
+#quartz-body:has(.sidebar.right:empty) {
+  grid-template-columns: 320px auto !important;
+  grid-template-areas:
+    "grid-sidebar-left grid-header"
+    "grid-sidebar-left grid-center"
+    "grid-sidebar-left grid-footer" !important;
+}
+
 // 首页图片 lightbox
 #about-lightbox {
   display: none;
