@@ -65,7 +65,7 @@ export default (() => {
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
         <meta property="og:image:alt" content={description} />
-
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="ea473a69-2b12-46a5-af9f-a5d4b6858fdb"></script>
      
         {cfg.baseUrl && (
           <>
