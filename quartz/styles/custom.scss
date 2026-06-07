@@ -15,13 +15,16 @@ footer {
   grid-template-columns: 3fr 1fr !important;
 }
 
-// 右侧栏为空时，桌面端收起右列，内容区撑满
-#quartz-body:has(.sidebar.right:empty) {
-  grid-template-columns: 320px auto !important;
-  grid-template-areas:
-    "grid-sidebar-left grid-header"
-    "grid-sidebar-left grid-center"
-    "grid-sidebar-left grid-footer" !important;
+// 右侧栏为空时，仅在桌面端（≥1200px）收起右列，内容区撑满
+// 平板和手机端原本就没有右列，不需要处理
+@media all and ($desktop) {
+  #quartz-body:has(.sidebar.right:empty) {
+    grid-template-columns: 320px auto !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer" !important;
+  }
 }
 
 // 首页图片 lightbox
