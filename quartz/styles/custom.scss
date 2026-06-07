@@ -27,6 +27,18 @@ footer {
   }
 }
 
+// 手机端：把列从 auto 改成 1fr，确保内容区完整填满可用宽度
+// auto 列在有 min-width:100% 的子项时会触发循环依赖，被降级为 auto（内容最小宽度），
+// 导致轨道被内容撑宽进而产生右侧空白；1fr 强制按比例分配，不会被内容撑开。
+@media all and ($mobile) {
+  .page > #quartz-body {
+    grid-template-columns: 1fr !important;
+  }
+  .page > #quartz-body > .center {
+    min-width: 0 !important;
+  }
+}
+
 // 首页图片 lightbox
 #about-lightbox {
   display: none;
