@@ -106,7 +106,8 @@ footer {
   }
 }
 
-.markdown-preview-view:has(.about-image) {
+// 首页图片两栏布局：用 body[data-slug="index"] 精准限定，避免 :has() 在 SPA 切换时污染其他页面
+body[data-slug="index"] .markdown-preview-view {
   display: grid;
   grid-template-columns: 1fr 380px;
   column-gap: 2em;
