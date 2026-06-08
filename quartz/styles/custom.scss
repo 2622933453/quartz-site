@@ -36,6 +36,10 @@ footer {
 // 自己承担 padding。这样 sidebar 从 x=0 开始，left:0 = 视口左边缘，
 // width:100vw 右边缘 = 100vw = 视口右边缘，完全不溢出。
 @media all and ($mobile) {
+  // overflow-x: clip 不创建滚动容器，body 上的 hidden 才能真正阻止横向滚动
+  body {
+    overflow-x: hidden;
+  }
   .page > #quartz-body {
     grid-template-columns: 1fr !important;
     overflow-x: clip;
@@ -43,7 +47,8 @@ footer {
     padding-right: 0 !important;
   }
   .page > #quartz-body > .center {
-    min-width: 0 !important;
+    width: 100%;
+    max-width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
   }
