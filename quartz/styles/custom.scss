@@ -37,6 +37,10 @@ footer {
 // width:100vw 右边缘 = 100vw = 视口右边缘，完全不溢出。
 @media all and ($mobile) {
   // overflow-x: clip 不创建滚动容器，body 上的 hidden 才能真正阻止横向滚动
+  // html 的 width:100vw 在 iOS Safari 会把滚动条/UI区域算进去导致溢出，改为 100%
+  html {
+    width: 100%;
+  }
   body {
     overflow-x: hidden;
   }
