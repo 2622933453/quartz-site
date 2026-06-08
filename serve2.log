@@ -1,0 +1,40 @@
+
+ Quartz v5.0.0  
+
+Cleaned output directory `public` in 20ms
+Found 6 input files from `content` in 11ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 194ms
+Filtered out 0 files in 44μs
+Emitting files
+Emitted 57 files to `public` in 151ms
+Done processing 6 files in 377ms
+Started a Quartz server listening at http://localhost:8080
+hint: exit with ctrl+c
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 12ms
+Found 6 input files from `content` in 6ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 107ms
+Filtered out 0 files in 28μs
+Emitting files
+Emitted 57 files to `public` in 126ms
+Done processing 6 files in 253ms
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 14ms
+Found 6 input files from `content` in 4ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 110ms
+Filtered out 0 files in 20μs
+Emitting files
+Emitted 57 files to `public` in 94ms
+Done processing 6 files in 223ms
+Detected a source code change, doing a hard rebuild...
+Cleaned output directory `public` in 14ms
+Found 6 input files from `content` in 4ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 108ms
+Filtered out 0 files in 18μs
+Emitting files
+Emitted 57 files to `public` in 95ms
+Done processing 6 files in 221ms

@@ -1,0 +1,13 @@
+
+ Quartz v5.0.0  
+
+Cleaned output directory `public` in 13ms
+Found 6 input files from `content` in 12ms
+Parsing input files using 1 threads
+Parsed 6 Markdown files in 183ms
+Filtered out 0 files in 52μs
+Emitting files
+Emitted 57 files to `public` in 128ms
+Done processing 6 files in 338ms
+Started a Quartz server listening at http://localhost:8080
+hint: exit with ctrl+c
