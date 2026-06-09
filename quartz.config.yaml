@@ -76,6 +76,10 @@ plugins:
     order: 30
   - source: github:quartz-community/github-flavored-markdown
     enabled: true
+    options:
+      # 关闭 smartypants：它会把中文省略号「……」(六个点)压成单个「…」(三个点)，
+      # 还会把直引号改成弯引号等。对中文写作弊大于利，关掉以保留原样输入。
+      enableSmartyPants: false
     order: 40
   - source: github:quartz-community/table-of-contents
     enabled: true
