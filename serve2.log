@@ -38,3 +38,703 @@ Filtered out 0 files in 18μs
 Emitting files
 Emitted 57 files to `public` in 95ms
 Done processing 6 files in 221ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+
+Warning: content/2026-06-08.md isn't yet tracked by git, dates will be inaccurate
+Parsed 1 Markdown files in 1s
+Filtered out 0 files in 178μs
+Emitted 8 files to `public` in 1s
+Done rebuilding in 1s
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 0 Markdown files in 159μs
+Filtered out 0 files in 12μs
+Emitted 7 files to `public` in 18ms
+Done rebuilding in 19ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+
+Warning: content/Diary/2026-06-08.md isn't yet tracked by git, dates will be inaccurate
+Parsed 1 Markdown files in 886ms
+Filtered out 0 files in 25μs
+Emitted 8 files to `public` in 910ms
+Done rebuilding in 910ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 56ms
+Filtered out 0 files in 149μs
+Emitted 8 files to `public` in 89ms
+Done rebuilding in 89ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 11μs
+Emitted 8 files to `public` in 44ms
+Done rebuilding in 44ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 38ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 60ms
+Done rebuilding in 61ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 25ms
+Filtered out 0 files in 15μs
+Emitted 8 files to `public` in 41ms
+Done rebuilding in 41ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 27ms
+Filtered out 0 files in 16μs
+Emitted 8 files to `public` in 45ms
+Done rebuilding in 46ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 33ms
+Filtered out 0 files in 18μs
+Emitted 8 files to `public` in 48ms
+Done rebuilding in 49ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 27ms
+Filtered out 0 files in 14μs
+Emitted 8 files to `public` in 44ms
+Done rebuilding in 44ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 26ms
+Done rebuilding in 26ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 30ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 46ms
+Done rebuilding in 47ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 34ms
+Done rebuilding in 34ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 42ms
+Done rebuilding in 43ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 27ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 39ms
+Done rebuilding in 39ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 22μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 19ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 37ms
+Done rebuilding in 37ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 57ms
+Done rebuilding in 57ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 40ms
+Done rebuilding in 40ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 14μs
+Emitted 8 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 27ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 26ms
+Done rebuilding in 26ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 15ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 26ms
+Done rebuilding in 26ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 14μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 32ms
+Done rebuilding in 32ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 11μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 15ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 27ms
+Done rebuilding in 27ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 12μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 15ms
+Filtered out 0 files in 15μs
+Emitted 8 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 19ms
+Filtered out 0 files in 11μs
+Emitted 8 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 32ms
+Done rebuilding in 32ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 11μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 23μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 15ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 16μs
+Emitted 8 files to `public` in 32ms
+Done rebuilding in 32ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 27ms
+Done rebuilding in 27ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 19ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 11μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 6μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 15μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 15μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 25ms
+Done rebuilding in 25ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 10μs
+Emitted 8 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 19ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 18ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 14ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 25ms
+Done rebuilding in 25ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 17ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 29ms
+Done rebuilding in 29ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 16ms
+Filtered out 0 files in 7μs
+Emitted 8 files to `public` in 28ms
+Done rebuilding in 28ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 62ms
+Filtered out 0 files in 218μs
+Emitted 8 files to `public` in 123ms
+Done rebuilding in 124ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 33ms
+Filtered out 0 files in 17μs
+Emitted 8 files to `public` in 55ms
+Done rebuilding in 55ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 29ms
+Filtered out 0 files in 16μs
+Emitted 8 files to `public` in 51ms
+Done rebuilding in 51ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 36ms
+Filtered out 0 files in 8μs
+Emitted 8 files to `public` in 52ms
+Done rebuilding in 52ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 37ms
+Filtered out 0 files in 9μs
+Emitted 8 files to `public` in 59ms
+Done rebuilding in 59ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 33ms
+Filtered out 0 files in 12μs
+Emitted 8 files to `public` in 54ms
+Done rebuilding in 54ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 1 Markdown files in 29ms
+Filtered out 0 files in 15μs
+Emitted 8 files to `public` in 46ms
+Done rebuilding in 46ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 85ms
+Filtered out 0 files in 14μs
+Emitted 9 files to `public` in 105ms
+Done rebuilding in 105ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 36ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 56ms
+Done rebuilding in 56ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 42ms
+Filtered out 0 files in 50μs
+Emitted 9 files to `public` in 59ms
+Done rebuilding in 59ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 47ms
+Filtered out 0 files in 29μs
+Emitted 9 files to `public` in 57ms
+Done rebuilding in 58ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 47ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 63ms
+Done rebuilding in 63ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 27ms
+Filtered out 0 files in 18μs
+Emitted 9 files to `public` in 48ms
+Done rebuilding in 48ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 39ms
+Filtered out 0 files in 14μs
+Emitted 9 files to `public` in 59ms
+Done rebuilding in 60ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 33ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 49ms
+Done rebuilding in 49ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 30ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 43ms
+Done rebuilding in 43ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 31ms
+Filtered out 0 files in 9μs
+Emitted 9 files to `public` in 42ms
+Done rebuilding in 42ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 25ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 42ms
+Done rebuilding in 42ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 38ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 52ms
+Done rebuilding in 52ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 25ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 42ms
+Done rebuilding in 42ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 29ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 53ms
+Done rebuilding in 53ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 32ms
+Filtered out 0 files in 9μs
+Emitted 9 files to `public` in 86ms
+Done rebuilding in 86ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 34ms
+Done rebuilding in 34ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 19ms
+Filtered out 0 files in 18μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 32ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 31ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 45ms
+Done rebuilding in 45ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 22ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 45ms
+Done rebuilding in 45ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 22ms
+Filtered out 0 files in 5μs
+Emitted 9 files to `public` in 33ms
+Done rebuilding in 33ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 19ms
+Filtered out 0 files in 5μs
+Emitted 9 files to `public` in 30ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 32ms
+Done rebuilding in 32ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 22ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 33ms
+Done rebuilding in 33ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 22ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 33ms
+Done rebuilding in 33ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 43ms
+Done rebuilding in 43ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 23ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 34ms
+Done rebuilding in 34ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 36ms
+Done rebuilding in 36ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 37ms
+Done rebuilding in 37ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 9μs
+Emitted 9 files to `public` in 35ms
+Done rebuilding in 35ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 30ms
+Done rebuilding in 30ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 23ms
+Filtered out 0 files in 5μs
+Emitted 9 files to `public` in 36ms
+Done rebuilding in 36ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 23ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 35ms
+Done rebuilding in 35ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 41ms
+Done rebuilding in 41ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 24ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 47ms
+Done rebuilding in 47ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 6μs
+Emitted 9 files to `public` in 34ms
+Done rebuilding in 34ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 26ms
+Filtered out 0 files in 8μs
+Emitted 9 files to `public` in 49ms
+Done rebuilding in 49ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 25ms
+Filtered out 0 files in 12μs
+Emitted 9 files to `public` in 39ms
+Done rebuilding in 39ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 21ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 33ms
+Done rebuilding in 33ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 23ms
+Filtered out 0 files in 9μs
+Emitted 9 files to `public` in 35ms
+Done rebuilding in 35ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 25ms
+Filtered out 0 files in 11μs
+Emitted 9 files to `public` in 37ms
+Done rebuilding in 37ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 23ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 35ms
+Done rebuilding in 35ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 20ms
+Filtered out 0 files in 7μs
+Emitted 9 files to `public` in 31ms
+Done rebuilding in 31ms
+Detected change, rebuilding...
+Parsing input files using 1 threads
+Parsed 2 Markdown files in 28ms
+Filtered out 0 files in 10μs
+Emitted 9 files to `public` in 42ms
+Done rebuilding in 42ms
