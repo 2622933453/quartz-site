@@ -44,7 +44,7 @@ plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
-      defaultDateType: modified
+      defaultDateType: created
       priority:
         - frontmatter
         - git
@@ -158,7 +158,7 @@ plugins:
     enabled: true
     options:
       title: Contents
-      sortFn: "(a, b) => { if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) { var cmp = (a.displayName || '').localeCompare(b.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); return a.isFolder ? cmp : -cmp; } if (!a.isFolder && b.isFolder) { return 1; } return -1; }"
+      sortFn: "(a, b) => { if (a.isFolder && b.isFolder) { var order = ['note', 'diary']; var ai = order.indexOf((a.slugSegment || '').toLowerCase()); var bi = order.indexOf((b.slugSegment || '').toLowerCase()); if (ai === -1) ai = order.length; if (bi === -1) bi = order.length; if (ai !== bi) return ai - bi; return (a.displayName || '').localeCompare(b.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); } if (a.isFolder !== b.isFolder) { return a.isFolder ? -1 : 1; } var ad = a.data && a.data.date ? new Date(a.data.date).getTime() : 0; var bd = b.data && b.data.date ? new Date(b.data.date).getTime() : 0; if (ad !== bd) return bd - ad; return (b.displayName || '').localeCompare(a.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); }"
     layout:
       position: left
       priority: 50

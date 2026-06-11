@@ -4,8 +4,8 @@
     {
       "name": "quartz",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["quartz", "build", "--serve", "--port", "8080"],
-      "port": 8080
+      "runtimeArgs": ["quartz", "build", "--serve", "--port", "8081"],
+      "port": 8081
     }
   ]
 }
