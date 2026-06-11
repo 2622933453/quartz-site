@@ -135,7 +135,8 @@ plugins:
       display: all
   - source: github:quartz-community/alias-redirects
     enabled: true
-  - source: github:quartz-community/content-index
+  # 本地修改版：保留 contentIndex.json 里的 date 字段，供 Explorer 按创建时间排序
+  - source: ./plugins/content-index
     enabled: true
     options:
       enableSiteMap: true

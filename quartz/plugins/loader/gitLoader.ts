@@ -459,7 +459,12 @@ export async function installPlugin(
       console.log(styleText("cyan", `→`), `Linking ${spec.name} from ${spec.repo}...`)
     }
 
-    fs.symlinkSync(spec.repo, pluginDir, "dir")
+    try {
+      // "junction" works without elevated privileges on Windows; ignored on POSIX
+      fs.symlinkSync(spec.repo, pluginDir, "junction")
+    } catch {
+      fs.cpSync(spec.repo, pluginDir, { recursive: true })
+    }
 
     if (options.verbose) {
       console.log(styleText("green", `✓`), `Linked ${spec.name}`)
