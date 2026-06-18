@@ -18,6 +18,11 @@ footer {
   display: none !important;
 }
 
+// 留言箱页单独隐藏整条面包屑
+body[data-slug="留言箱"] .breadcrumb-container {
+  display: none !important;
+}
+
 // base.scss 给 p/li 设了 text-wrap: pretty，它会"平衡"整段行宽，导致中文段落
 // 按比容器更窄的宽度排版（同页有的段满宽、有的段缩进几个字）。改回贪婪换行，
 // 让每行都填满到最右、塞不下才换行。
