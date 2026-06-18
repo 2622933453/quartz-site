@@ -134,4 +134,11 @@ body[data-slug="index"] .markdown-preview-view {
   }
 }
 
+// 修复：在首页悬停链接时，预览弹窗(popover)的内容也被注入 body[data-slug="index"] 里，
+// 会误中上面那条两栏网格，导致预览文字被挤成极窄一列。这里把 popover 内的内容
+// 重置回正常块级排版（!important 压过上面的网格规则）。
+.popover .markdown-preview-view {
+  display: block !important;
+}
+
 
