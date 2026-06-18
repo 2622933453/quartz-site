@@ -5,6 +5,12 @@ footer {
   display: none !important;
 }
 
+// 隐藏左侧边栏 Explorer 顶部的「Contents」标题/折叠按钮，
+// 直接显示 Note、Diary 等目录。仅桌面端标题按钮，不影响手机端菜单。
+.explorer .title-button.desktop-explorer {
+  display: none !important;
+}
+
 // base.scss 给 p/li 设了 text-wrap: pretty，它会"平衡"整段行宽，导致中文段落
 // 按比容器更窄的宽度排版（同页有的段满宽、有的段缩进几个字）。改回贪婪换行，
 // 让每行都填满到最右、塞不下才换行。
