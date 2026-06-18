@@ -52,7 +52,7 @@ title: About
       <line x1="5" x2="7" y1="10" y2="10"/>
     </svg>
   </span>
-  <span class="mailbox-label">悄悄留句话</span>
+  <span class="mailbox-label">留言箱</span>
 </a>
 
 <style>
