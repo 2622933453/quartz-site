@@ -41,7 +41,8 @@ configuration:
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#b3aa0288"
 plugins:
-  - source: github:quartz-community/created-modified-date
+  # 本地修改版：补上「git 首次提交时间 → created」，这样新文章无需手写 created frontmatter
+  - source: ./plugins/created-modified-date
     enabled: true
     options:
       defaultDateType: created
