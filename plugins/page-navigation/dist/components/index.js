@@ -74,9 +74,7 @@ const styleCss = `
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--lightgray);
+  margin-top: 1rem;
 }
 .page-nav-link {
   display: flex;
