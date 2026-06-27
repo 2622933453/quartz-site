@@ -1,0 +1,58 @@
+{
+  "name": "@local/page-navigation",
+  "version": "1.0.0",
+  "description": "Adds 上一篇 / 下一篇 navigation links at the bottom of each article (same folder, ordered by date).",
+  "type": "module",
+  "license": "MIT",
+  "author": "xh-diary",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "page-navigation",
+    "displayName": "Page Navigation",
+    "description": "上一篇 / 下一篇 navigation at the bottom of articles.",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=4.5.0",
+    "defaultEnabled": true,
+    "defaultOrder": 50,
+    "defaultOptions": {
+      "prevLabel": "上一篇",
+      "nextLabel": "下一篇"
+    },
+    "components": {
+      "PageNavigation": {
+        "displayName": "Page Navigation",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 20
+      }
+    },
+    "optionSchema": {
+      "prevLabel": {
+        "type": "string"
+      },
+      "nextLabel": {
+        "type": "string"
+      }
+    }
+  }
+}
