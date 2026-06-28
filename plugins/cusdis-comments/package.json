@@ -1,0 +1,62 @@
+{
+  "name": "@local/cusdis-comments",
+  "version": "1.0.0",
+  "description": "Cusdis comments component for Quartz with frontmatter opt-in.",
+  "type": "module",
+  "license": "MIT",
+  "author": "xh-diary",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "cusdis-comments",
+    "displayName": "Cusdis Comments",
+    "description": "Anonymous Cusdis comments, enabled per page with comments: true.",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": false,
+    "defaultOrder": 50,
+    "defaultOptions": {
+      "host": "https://cusdis.com",
+      "appId": "",
+      "lang": "zh-cn"
+    },
+    "components": {
+      "CusdisComments": {
+        "displayName": "Cusdis Comments",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 10
+      }
+    },
+    "optionSchema": {
+      "host": {
+        "type": "string"
+      },
+      "appId": {
+        "type": "string"
+      },
+      "lang": {
+        "type": "string"
+      }
+    }
+  }
+}

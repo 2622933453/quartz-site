@@ -231,6 +231,15 @@ plugins:
       position: afterBody
       priority: 10
   # 本地组件：文章正文下方的「上一篇 / 下一篇」导航（同文件夹内按日期，下一篇=更早的一篇）
+  - source: ./plugins/cusdis-comments
+    enabled: true
+    options:
+      host: https://cusdis.com
+      appId: ""
+      lang: zh-cn
+    layout:
+      position: afterBody
+      priority: 10
   - source: ./plugins/page-navigation
     enabled: true
     options:
