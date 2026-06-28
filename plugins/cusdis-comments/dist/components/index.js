@@ -112,6 +112,7 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
     if (!el) return;
 
     const widgetSrc = el.dataset.scriptSrc;
+    el.dataset.theme = getCurrentTheme();
     loadLang(el.dataset.langSrc);
     loadScript(widgetSrc, function () {
       if (window.CUSDIS && typeof window.CUSDIS.renderTo === "function") {
@@ -124,7 +125,28 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
           customizeCusdisFrame(el);
         }, delay);
       });
+      syncCusdisTheme();
     });
+  }
+
+  function getCurrentTheme() {
+    const theme = document.documentElement.getAttribute("saved-theme");
+    return theme === "dark" ? "dark" : "light";
+  }
+
+  function syncCusdisTheme(theme) {
+    const nextTheme = theme || getCurrentTheme();
+    const el = document.querySelector("#cusdis_thread");
+    if (el) el.dataset.theme = nextTheme;
+    if (window.CUSDIS && typeof window.CUSDIS.setTheme === "function") {
+      window.CUSDIS.setTheme(nextTheme);
+    }
+    const iframe = el ? el.querySelector("iframe") : null;
+    if (iframe) {
+      window.setTimeout(function () {
+        customizeCusdisFrame(el);
+      }, 50);
+    }
   }
 
   function customizeCusdisFrame(el) {
@@ -176,6 +198,23 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
           'textarea[name="reply_content"] {',
           '  min-height: 10rem !important;',
           '  resize: vertical !important;',
+          '}',
+          '.dark input,',
+          '.dark textarea {',
+          '  border-color: #393639 !important;',
+          '  color: #ebebec !important;',
+          '  background: transparent !important;',
+          '}',
+          '.dark button {',
+          '  border-color: #393639 !important;',
+          '  color: #ebebec !important;',
+          '}',
+          '.dark a,',
+          '.dark .text-gray-500,',
+          '.dark .dark\\\\:text-gray-100,',
+          '.dark .dark\\\\:text-gray-200,',
+          '.dark .dark\\\\:text-gray-400 {',
+          '  color: #d4d4d4 !important;',
           '}',
           'a[href="https://cusdis.com"],',
           'a[href="https://cusdis.com/"],',
@@ -240,6 +279,9 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
 
   document.addEventListener("nav", renderCusdis);
   document.addEventListener("render", renderCusdis);
+  document.addEventListener("themechange", function (event) {
+    syncCusdisTheme(event.detail && event.detail.theme);
+  });
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", renderCusdis);
   } else {
@@ -273,6 +315,7 @@ const CusdisComments = (opts = {}) => {
       "data-page-title": pageTitle(fileData),
       "data-script-src": `${host}/js/cusdis.es.js`,
       "data-lang-src": options.lang ? `${host}/js/widget/lang/${options.lang}.js` : undefined,
+      "data-theme": "light",
     })
   }
 
