@@ -51,6 +51,12 @@ function pageUrl(cfg, slug) {
 const styleCss = `
 .cusdis-comments {
   margin-top: 1.5rem;
+  min-height: 680px;
+  overflow: visible;
+}
+.cusdis-comments iframe {
+  min-height: 680px;
+  overflow: visible;
 }
 `
 
@@ -110,7 +116,56 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
       } else if (typeof window.renderCusdis === "function") {
         window.renderCusdis(el);
       }
+      window.setTimeout(function () {
+        customizeCusdisFrame(el);
+      }, 100);
     });
+  }
+
+  function customizeCusdisFrame(el) {
+    const iframe = el.querySelector("iframe");
+    if (!iframe) return;
+
+    iframe.style.minHeight = "680px";
+    iframe.style.overflow = "visible";
+    iframe.setAttribute("scrolling", "no");
+
+    try {
+      const doc = iframe.contentDocument;
+      if (!doc || doc.getElementById("cusdis-quartz-overrides")) return;
+
+      const style = doc.createElement("style");
+      style.id = "cusdis-quartz-overrides";
+      style.textContent = [
+        'input[type="email"],',
+        'input[name="email"],',
+        'input[placeholder*="邮箱"],',
+        'input[placeholder*="Email"],',
+        'div:has(> input[type="email"]),',
+        'div:has(> input[name="email"]),',
+        'label:has(input[type="email"]),',
+        'label:has(input[name="email"]),',
+        '.field:has(input[type="email"]),',
+        '.field:has(input[name="email"]),',
+        '.form-control:has(input[type="email"]),',
+        '.form-control:has(input[name="email"]) {',
+        '  display: none !important;',
+        '}',
+        'html, body, #root {',
+        '  min-height: 640px !important;',
+        '  overflow: visible !important;',
+        '}',
+        '.grid-cols-2 {',
+        '  grid-template-columns: minmax(0, 1fr) !important;',
+        '}',
+        'textarea[name="reply_content"] {',
+        '  min-height: 10rem !important;',
+        '  resize: vertical !important;',
+        '}',
+      ].join("\\n");
+      doc.head.appendChild(style);
+    } catch (_) {
+    }
   }
 
   document.addEventListener("nav", renderCusdis);
