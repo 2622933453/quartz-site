@@ -235,7 +235,7 @@ plugins:
     enabled: true
     options:
       host: https://cusdis.com
-      appId: ""
+      appId: 4b79d561-363b-4380-b769-bb931eb2a126
       lang: zh-cn
     layout:
       position: afterBody
