@@ -112,6 +112,12 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
           '  min-height: 10rem !important;',
           '  resize: vertical !important;',
           '}',
+          'a[href="https://cusdis.com"],',
+          'a[href="https://cusdis.com/"],',
+          'div:has(> a[href="https://cusdis.com"]),',
+          'div:has(> a[href="https://cusdis.com/"]) {',
+          '  display: none !important;',
+          '}',
         ].join("\n");
         doc.head.appendChild(style);
       }
