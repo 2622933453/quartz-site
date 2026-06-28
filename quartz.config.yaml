@@ -239,7 +239,7 @@ plugins:
       lang: zh-cn
     layout:
       position: afterBody
-      priority: 10
+      priority: 30
   - source: ./plugins/page-navigation
     enabled: true
     options:

@@ -51,12 +51,15 @@ function pageUrl(cfg, slug) {
 const styleCss = `
 .cusdis-comments {
   margin-top: 1.5rem;
-  min-height: 680px;
+  min-height: 760px;
   overflow: visible;
 }
 .cusdis-comments iframe {
-  min-height: 680px;
-  overflow: visible;
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  overflow: hidden;
+  scrollbar-width: none;
 }
 `
 
@@ -116,9 +119,11 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
       } else if (typeof window.renderCusdis === "function") {
         window.renderCusdis(el);
       }
-      window.setTimeout(function () {
-        customizeCusdisFrame(el);
-      }, 100);
+      [100, 500, 1200].forEach(function (delay) {
+        window.setTimeout(function () {
+          customizeCusdisFrame(el);
+        }, delay);
+      });
     });
   }
 
@@ -126,47 +131,106 @@ window.CUSDIS_PREVENT_INITIAL_RENDER = true;
     const iframe = el.querySelector("iframe");
     if (!iframe) return;
 
-    iframe.style.minHeight = "680px";
-    iframe.style.overflow = "visible";
+    iframe.style.minHeight = "760px";
+    iframe.style.overflow = "hidden";
     iframe.setAttribute("scrolling", "no");
 
     try {
       const doc = iframe.contentDocument;
-      if (!doc || doc.getElementById("cusdis-quartz-overrides")) return;
+      if (!doc) return;
 
-      const style = doc.createElement("style");
-      style.id = "cusdis-quartz-overrides";
-      style.textContent = [
-        'input[type="email"],',
-        'input[name="email"],',
-        'input[placeholder*="邮箱"],',
-        'input[placeholder*="Email"],',
-        'div:has(> input[type="email"]),',
-        'div:has(> input[name="email"]),',
-        'label:has(input[type="email"]),',
-        'label:has(input[name="email"]),',
-        '.field:has(input[type="email"]),',
-        '.field:has(input[name="email"]),',
-        '.form-control:has(input[type="email"]),',
-        '.form-control:has(input[name="email"]) {',
-        '  display: none !important;',
-        '}',
-        'html, body, #root {',
-        '  min-height: 640px !important;',
-        '  overflow: visible !important;',
-        '}',
-        '.grid-cols-2 {',
-        '  grid-template-columns: minmax(0, 1fr) !important;',
-        '}',
-        'textarea[name="reply_content"] {',
-        '  min-height: 10rem !important;',
-        '  resize: vertical !important;',
-        '}',
-      ].join("\\n");
-      doc.head.appendChild(style);
+      if (!doc.getElementById("cusdis-quartz-overrides")) {
+        const style = doc.createElement("style");
+        style.id = "cusdis-quartz-overrides";
+        style.textContent = [
+          'input[type="email"],',
+          'input[name="email"],',
+          'input[placeholder*="邮箱"],',
+          'input[placeholder*="Email"],',
+          'div:has(> input[type="email"]),',
+          'div:has(> input[name="email"]),',
+          'label:has(input[type="email"]),',
+          'label:has(input[name="email"]),',
+          '.field:has(input[type="email"]),',
+          '.field:has(input[name="email"]),',
+          '.form-control:has(input[type="email"]),',
+          '.form-control:has(input[name="email"]) {',
+          '  display: none !important;',
+          '}',
+          'html, body {',
+          '  height: auto !important;',
+          '  min-height: 0 !important;',
+          '  overflow: hidden !important;',
+          '  scrollbar-width: none !important;',
+          '}',
+          'html::-webkit-scrollbar, body::-webkit-scrollbar {',
+          '  display: none !important;',
+          '}',
+          '#root {',
+          '  min-height: 0 !important;',
+          '  overflow: visible !important;',
+          '}',
+          '.grid-cols-2 {',
+          '  grid-template-columns: minmax(0, 1fr) !important;',
+          '}',
+          'textarea[name="reply_content"] {',
+          '  min-height: 10rem !important;',
+          '  resize: vertical !important;',
+          '}',
+        ].join("\\n");
+        doc.head.appendChild(style);
+      }
+
+      syncCusdisFrameHeight(el, iframe);
+      if (!doc.documentElement.dataset.quartzAutoHeight) {
+        doc.documentElement.dataset.quartzAutoHeight = "true";
+        iframe.addEventListener("load", function () {
+          window.setTimeout(function () {
+            customizeCusdisFrame(el);
+          }, 100);
+        });
+        const root = doc.getElementById("root") || doc.body;
+        if (root) {
+          const observer = new MutationObserver(function () {
+            syncCusdisFrameHeight(el, iframe);
+          });
+          observer.observe(root, { childList: true, subtree: true, attributes: true });
+        }
+      }
     } catch (_) {
     }
   }
+
+  function syncCusdisFrameHeight(el, iframe) {
+    try {
+      const doc = iframe.contentDocument;
+      const height = Math.max(
+        760,
+        doc.documentElement.scrollHeight,
+        doc.body ? doc.body.scrollHeight : 0,
+      );
+      iframe.style.height = height + "px";
+      el.style.minHeight = height + "px";
+    } catch (_) {
+      iframe.style.height = "760px";
+      el.style.minHeight = "760px";
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    try {
+      const msg = JSON.parse(event.data);
+      if (msg.from !== "cusdis" || msg.event !== "resize") return;
+      const el = document.querySelector("#cusdis_thread");
+      const iframe = el ? el.querySelector("iframe") : null;
+      if (el && iframe) {
+        window.setTimeout(function () {
+          syncCusdisFrameHeight(el, iframe);
+        }, 0);
+      }
+    } catch (_) {
+    }
+  });
 
   document.addEventListener("nav", renderCusdis);
   document.addEventListener("render", renderCusdis);
