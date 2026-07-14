@@ -1,30 +1,9 @@
 ---
 title: About
 ---
-<img class="about-image" id="daily-photo" src="photos/3.jpg" alt="">
-
 <div id="about-lightbox">
   <img id="about-lightbox-img" src="" alt="">
 </div>
-
-<script>
-(function () {
-  var img = document.getElementById("daily-photo");
-  if (img) img.src = "photos/3.jpg";
-
-  var lightbox = document.getElementById("about-lightbox");
-  var lightboxImg = document.getElementById("about-lightbox-img");
-
-  img.addEventListener("dblclick", function () {
-    lightboxImg.src = img.src;
-    lightbox.classList.add("active");
-  });
-
-  lightbox.addEventListener("click", function () {
-    lightbox.classList.remove("active");
-  });
-})();
-</script>
 
 你好呀！
 这里是我的个人日记站，欢迎你~
