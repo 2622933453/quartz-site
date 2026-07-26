@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: 小浩日记
+  pageTitle: Ghiaccio的手账
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,6 +16,7 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
+      title: ZCOOL KuaiLe
       header: Schibsted Grotesk
       body: Source Sans Pro
       code: IBM Plex Mono
