@@ -5,15 +5,12 @@
 // Cute handwritten site wordmark
 .page-title {
   font-size: clamp(1.8rem, 4vw, 2.15rem) !important;
+  font-family: "LXGW WenKai", "Microsoft YaHei", sans-serif !important;
   line-height: 1.15;
   letter-spacing: 0.025em;
 
   a {
     color: #4f7892;
-    background: linear-gradient(115deg, #3f718c 5%, #568c8a 55%, #718b6b 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-decoration: none;
     filter: drop-shadow(0 2px 0 rgba(255, 255, 255, 0.78))
       drop-shadow(0 3px 4px rgba(56, 91, 101, 0.14));
@@ -21,10 +18,7 @@
 }
 
 :root[saved-theme="dark"] .page-title a {
-  background: linear-gradient(115deg, #8dbbd0 5%, #8fc2b5 55%, #a9bc8d 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #9bc0ca;
   filter: drop-shadow(0 2px 0 rgba(31, 39, 42, 0.82))
     drop-shadow(0 3px 5px rgba(96, 157, 159, 0.12));
 }

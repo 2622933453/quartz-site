@@ -16,7 +16,10 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      title: ZCOOL XiaoWei
+      title:
+        name: Source Sans Pro
+        weights:
+          - 400
       header: Schibsted Grotesk
       body: Source Sans Pro
       code: IBM Plex Mono
@@ -198,7 +201,7 @@ plugins:
     layout:
       position: beforeBody
       priority: 30
-  - source: ./plugins/arched-page-title
+  - source: github:quartz-community/page-title
     enabled: true
     layout:
       position: left
