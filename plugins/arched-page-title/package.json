@@ -1,0 +1,47 @@
+{
+  "name": "@local/arched-page-title",
+  "version": "1.0.0",
+  "description": "A gently arched site title for the Ghiaccio notebook.",
+  "type": "module",
+  "license": "MIT",
+  "author": "xh-diary",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "arched-page-title",
+    "displayName": "Arched Page Title",
+    "description": "Displays the site title on a gentle arch.",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {},
+    "components": {
+      "PageTitle": {
+        "displayName": "Page Title",
+        "defaultPosition": "left",
+        "defaultPriority": 10
+      }
+    }
+  }
+}

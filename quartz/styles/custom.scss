@@ -46,14 +46,8 @@ footer {
   display: none !important;
 }
 
-// 留言板、电台页单独隐藏整条面包屑
-body[data-slug="留言板"] .breadcrumb-container,
-body[data-slug="电台"] .breadcrumb-container {
-  display: none !important;
-}
-
-// 电台页不显示文章上一篇/下一篇导航
-body[data-slug="电台"] .page-navigation {
+// 留言板页单独隐藏整条面包屑
+body[data-slug="留言板"] .breadcrumb-container {
   display: none !important;
 }
 

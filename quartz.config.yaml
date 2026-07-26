@@ -16,7 +16,7 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      title: ZCOOL KuaiLe
+      title: ZCOOL XiaoWei
       header: Schibsted Grotesk
       body: Source Sans Pro
       code: IBM Plex Mono
@@ -198,7 +198,7 @@ plugins:
     layout:
       position: beforeBody
       priority: 30
-  - source: github:quartz-community/page-title
+  - source: ./plugins/arched-page-title
     enabled: true
     layout:
       position: left
