@@ -1,1 +1,0 @@
-@layer quartz-base{.page-title{font-family:var(--titleFont);margin:0}.page-title-letters{align-items:flex-end;padding:.75rem .15rem .15rem;display:inline-flex}.page-title-char{transform:translateY(var(--arch-y)) rotate(var(--arch-r));transform-origin:50% 100%;display:inline-block}}
