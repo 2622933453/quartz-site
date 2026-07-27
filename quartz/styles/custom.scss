@@ -337,3 +337,89 @@ body[data-slug="index"] .markdown-preview-view {
 .popover .markdown-preview-view {
   display: block !important;
 }
+
+// 首页「最近更新」：轻量的文字列表，保留个人手账的安静感。
+body[data-slug="index"] .recent-notes {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+
+  > h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1rem;
+    color: var(--dark);
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+
+    &::before {
+      content: "✦";
+      color: var(--secondary);
+      font-size: 0.9em;
+    }
+  }
+
+  > ul.recent-ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 1rem;
+    margin: 0;
+  }
+
+  > ul.recent-ul > li.recent-li {
+    margin: 0;
+
+    .section {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      min-height: 2.65rem;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--lightgray);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--light) 88%, var(--highlight));
+      transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      border-color: var(--secondary);
+      background: var(--highlight);
+    }
+
+    .desc {
+      min-width: 0;
+
+      h3 {
+        margin: 0;
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+
+      a {
+        color: var(--darkgray);
+        background: transparent;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--secondary);
+      }
+    }
+
+    .meta {
+      display: none;
+    }
+  }
+
+  @media all and ($mobile) {
+    > ul.recent-ul {
+      grid-template-columns: 1fr;
+    }
+  }
+}
