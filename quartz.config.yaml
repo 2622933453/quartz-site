@@ -25,25 +25,25 @@ configuration:
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#fbf1c7"
+        lightgray: "#f2e5bc"
+        gray: "#7c6f64"
+        darkgray: "#3c3836"
+        dark: "#282828"
+        secondary: "#8a1814"
+        tertiary: "#076678"
+        highlight: rgba(242, 207, 129, 0.28)
+        textHighlight: "#f2cf8188"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#282828"
+        lightgray: "#1d2021"
+        gray: "#504945"
+        darkgray: "#ebdbb2"
+        dark: "#fbf1c7"
+        secondary: "#83a598"
+        tertiary: "#fb4934"
+        highlight: rgba(131, 165, 152, 0.18)
+        textHighlight: "#d7992155"
 plugins:
   # 本地修改版：补上「git 首次提交时间 → created」，这样新文章无需手写 created frontmatter
   - source: ./plugins/created-modified-date
@@ -164,7 +164,7 @@ plugins:
     enabled: true
     options:
       title: Contents
-      sortFn: "(a, b) => { if (a.isFolder && b.isFolder) { var order = ['note', 'diary']; var ai = order.indexOf((a.slugSegment || '').toLowerCase()); var bi = order.indexOf((b.slugSegment || '').toLowerCase()); if (ai === -1) ai = order.length; if (bi === -1) bi = order.length; if (ai !== bi) return ai - bi; return (a.displayName || '').localeCompare(b.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); } if (a.isFolder !== b.isFolder) { return a.isFolder ? -1 : 1; } var ad = a.data && a.data.date ? new Date(a.data.date).getTime() : 0; var bd = b.data && b.data.date ? new Date(b.data.date).getTime() : 0; if (ad !== bd) return bd - ad; return (b.displayName || '').localeCompare(a.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); }"
+      sortFn: "(a, b) => { if (a.isFolder && b.isFolder) { var order = ['diary', '有关爱的一切', '随想', '杂学考究', '审美', '关于本站']; var ai = order.indexOf((a.slugSegment || '').toLowerCase()); var bi = order.indexOf((b.slugSegment || '').toLowerCase()); if (ai === -1) ai = order.length; if (bi === -1) bi = order.length; if (ai !== bi) return ai - bi; return (a.displayName || '').localeCompare(b.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); } if (a.isFolder !== b.isFolder) { return a.isFolder ? -1 : 1; } var ad = a.data && a.data.date ? new Date(a.data.date).getTime() : 0; var bd = b.data && b.data.date ? new Date(b.data.date).getTime() : 0; if (ad !== bd) return bd - ad; return (b.displayName || '').localeCompare(a.displayName || '', undefined, { numeric: true, sensitivity: 'base' }); }"
     layout:
       position: left
       priority: 50

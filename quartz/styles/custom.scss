@@ -10,17 +10,71 @@
   letter-spacing: 0.025em;
 
   a {
-    color: #4f7892;
+    display: inline-block;
+    color: #8a1814;
+    background: linear-gradient(
+      105deg,
+      #8a1814 0%,
+      #b54b1d 24%,
+      #d79921 48%,
+      #076678 72%,
+      #8a1814 100%
+    );
+    background-size: 220% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
-    filter: drop-shadow(0 2px 0 rgba(255, 255, 255, 0.78))
-      drop-shadow(0 3px 4px rgba(56, 91, 101, 0.14));
+    transform-origin: left center;
+    transition:
+      background-position 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.28s ease,
+      filter 0.28s ease;
+    filter: drop-shadow(0 2px 0 rgba(255, 248, 218, 0.82))
+      drop-shadow(0 3px 4px rgba(60, 56, 54, 0.12));
+
+    &:hover,
+    &:focus-visible {
+      background-position: 100% 50%;
+      transform: translateY(-2px) scale(1.025);
+      filter: drop-shadow(0 3px 0 rgba(255, 248, 218, 0.72))
+        drop-shadow(0 6px 8px rgba(60, 56, 54, 0.16));
+    }
   }
 }
 
 :root[saved-theme="dark"] .page-title a {
-  color: #9bc0ca;
-  filter: drop-shadow(0 2px 0 rgba(31, 39, 42, 0.82))
-    drop-shadow(0 3px 5px rgba(96, 157, 159, 0.12));
+  color: #fb4934;
+  background: linear-gradient(
+    105deg,
+    #fb4934 0%,
+    #fe8019 24%,
+    #fabd2f 48%,
+    #83a598 72%,
+    #fb4934 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(29, 32, 33, 0.9))
+    drop-shadow(0 3px 5px rgba(251, 73, 52, 0.1));
+
+  &:hover,
+  &:focus-visible {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 3px 0 rgba(29, 32, 33, 0.78))
+      drop-shadow(0 6px 9px rgba(250, 189, 47, 0.16));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-title a {
+    transition: none;
+    transform: none;
+  }
 }
 
 footer {
@@ -40,8 +94,124 @@ footer {
   display: none !important;
 }
 
+// 面包屑与左侧目录使用正文色：
+// 日间为深棕，夜间为暖金；仅在悬停时使用主题强调色。
+.breadcrumb-container a {
+  color: var(--darkgray);
+
+  &:hover {
+    color: var(--secondary);
+  }
+}
+
+.explorer {
+  button.mobile-explorer,
+  button.desktop-explorer,
+  .explorer-content ul li > a,
+  .explorer-content ul li > a.active,
+  .folder-container div > a,
+  .folder-container div > button,
+  .folder-container div > button span {
+    color: var(--darkgray);
+  }
+
+  .explorer-content ul li > a {
+    opacity: 0.88;
+  }
+
+  .explorer-content ul li > a.active {
+    opacity: 1;
+  }
+
+  .explorer-content ul li > a:hover,
+  .folder-container div > a:hover,
+  .folder-container div > button:hover span {
+    color: var(--secondary);
+  }
+
+  .folder-icon {
+    color: var(--gray);
+  }
+
+  .folder-icon:hover {
+    color: var(--secondary);
+  }
+
+  // 一级目录的细线图标，颜色自动跟随日间 / 夜间主题。
+  .explorer-content > .explorer-ul > li > .folder-container .folder-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 1rem;
+      background-color: currentColor;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
+  }
+
+  .folder-container[data-folderpath="diary/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E");
+  }
+
+  .folder-container[data-folderpath="随想/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5zM16 8 2 22M17.5 15H9'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5zM16 8 2 22M17.5 15H9'/%3E%3C/svg%3E");
+  }
+
+  .folder-container[data-folderpath="有关爱的一切/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+  }
+
+  .folder-container[data-folderpath="杂学考究/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 4.6L5.5 9.5l4.6 1.9L12 16l1.9-4.6 4.6-1.9-4.6-1.9zM5 3v4M3 5h4M19 17v4M17 19h4'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 4.6L5.5 9.5l4.6 1.9L12 16l1.9-4.6 4.6-1.9-4.6-1.9zM5 3v4M3 5h4M19 17v4M17 19h4'/%3E%3C/svg%3E");
+  }
+
+  .folder-container[data-folderpath="审美/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a10 10 0 1 1 10-10c0 2-1 3-3 3h-1.7a2 2 0 0 0-1.8 2.9l.3.6A2.4 2.4 0 0 1 14.6 22z'/%3E%3Ccircle cx='7.5' cy='10.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='10.5' cy='6.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='15.5' cy='7.5' r='1' fill='black' stroke='none'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a10 10 0 1 1 10-10c0 2-1 3-3 3h-1.7a2 2 0 0 0-1.8 2.9l.3.6A2.4 2.4 0 0 1 14.6 22z'/%3E%3Ccircle cx='7.5' cy='10.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='10.5' cy='6.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='15.5' cy='7.5' r='1' fill='black' stroke='none'/%3E%3C/svg%3E");
+  }
+
+  .folder-container[data-folderpath="关于本站/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 11 9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 22V12h6v10'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 11 9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 22V12h6v10'/%3E%3C/svg%3E");
+  }
+}
+
+// 文章底部的上一篇 / 下一篇导航与正文配色保持一致。
+.page-navigation {
+  .page-nav-label {
+    color: var(--darkgray);
+    opacity: 0.72;
+  }
+
+  .page-nav-title {
+    color: var(--darkgray);
+  }
+
+  .page-nav-link:hover .page-nav-title {
+    color: var(--secondary);
+  }
+}
+
 // 留言板页单独隐藏整条面包屑
 body[data-slug="留言板"] .breadcrumb-container {
+  display: none !important;
+}
+
+// 一级目录页不显示面包屑；具体文章页面仍然保留。
+body[data-slug$="/index"] .breadcrumb-container {
   display: none !important;
 }
 
