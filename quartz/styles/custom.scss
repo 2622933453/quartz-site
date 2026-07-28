@@ -210,6 +210,11 @@ body[data-slug="留言板"] .breadcrumb-container {
   display: none !important;
 }
 
+// 独立的个人图鉴页不显示面包屑。
+body[data-slug="关于我"] .breadcrumb-container {
+  display: none !important;
+}
+
 // 一级目录页不显示面包屑；具体文章页面仍然保留。
 body[data-slug$="/index"] .breadcrumb-container {
   display: none !important;
@@ -306,6 +311,22 @@ body[data-slug="index"] .markdown-preview-view {
   grid-template-columns: 1fr 380px;
   column-gap: 2em;
 
+  > .profile-card {
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    align-self: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  > .identity-portal {
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    align-self: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   // 图片放右列，纵向撑满所有行，自身垂直居中
   > .about-image,
   > p:has(.about-image) {
@@ -322,12 +343,328 @@ body[data-slug="index"] .markdown-preview-view {
   }
 
   // 其余内容放左列
-  > *:not(.about-image) {
+  > *:not(.about-image, .profile-card, .identity-portal) {
     grid-column: 1;
   }
 
   @media all and ($mobile) {
     display: block;
+
+    > .profile-card,
+    > .identity-portal {
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
+  }
+}
+
+// 首页通往「关于我」图鉴页的图片入口。
+.identity-portal {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--lightgray);
+  border-radius: 14px;
+  background: #111a2d !important;
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--dark) 9%, transparent);
+  text-decoration: none;
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    transition:
+      transform 320ms ease,
+      filter 320ms ease;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.018);
+      filter: brightness(1.06);
+    }
+  }
+}
+
+// 「关于我」页：保留图鉴式结构，但使用网站自身的日间 / 夜间配色。
+body[data-slug="关于我"] {
+  .article-title {
+    display: none;
+  }
+
+  .profile-dex {
+    overflow: hidden;
+    border: 1px solid var(--lightgray);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--light) 96%, var(--highlight));
+    color: var(--darkgray);
+    box-shadow: 0 12px 30px color-mix(in srgb, var(--dark) 8%, transparent);
+  }
+
+  .profile-dex__topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--lightgray);
+    background: color-mix(in srgb, var(--highlight) 42%, transparent);
+    color: var(--secondary);
+    font-family: var(--codeFont);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .profile-dex__hero {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 1.4rem;
+    padding: 1.5rem;
+    background:
+      radial-gradient(circle at 92% 8%, color-mix(in srgb, var(--tertiary) 9%, transparent), transparent 38%),
+      linear-gradient(135deg, color-mix(in srgb, var(--secondary) 5%, transparent), transparent 56%);
+  }
+
+  .profile-dex__portrait {
+    min-height: 170px;
+    overflow: hidden;
+    border: 4px solid var(--light);
+    outline: 1px solid var(--lightgray);
+    border-radius: 9px;
+    background: var(--light);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--dark) 9%, transparent);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+    }
+  }
+
+  .profile-dex__summary {
+    align-self: center;
+
+    p {
+      color: var(--darkgray);
+    }
+
+    > p:last-child {
+      margin-bottom: 0;
+      line-height: 1.8;
+    }
+  }
+
+  .profile-dex__eyebrow {
+    margin: 0 0 0.2rem;
+    color: var(--secondary) !important;
+    font-family: var(--codeFont);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .profile-dex__name {
+    color: var(--dark);
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .profile-dex__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.8rem;
+
+    span {
+      padding: 0.24rem 0.65rem;
+      border: 1px solid color-mix(in srgb, var(--secondary) 28%, var(--lightgray));
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--highlight) 62%, transparent);
+      color: var(--darkgray);
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+  }
+
+  .profile-dex__section {
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--lightgray);
+  }
+
+  .profile-dex__section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    color: var(--dark);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    &::before {
+      content: "";
+      width: 3px;
+      height: 1.1em;
+      border-radius: 999px;
+      background: var(--secondary);
+    }
+  }
+
+  .profile-dex__self-intro {
+    min-height: 9rem;
+    color: var(--darkgray);
+    line-height: 1.8;
+    white-space: pre-wrap;
+  }
+
+  .profile-dex__routes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.68rem 0.8rem;
+      border: 1px solid var(--lightgray);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--light) 88%, var(--highlight));
+      color: var(--darkgray);
+      text-decoration: none;
+      transition:
+        border-color 160ms ease,
+        color 160ms ease,
+        transform 160ms ease,
+        background-color 160ms ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      border-color: var(--secondary);
+      background: var(--highlight);
+      color: var(--secondary);
+    }
+  }
+
+  @media all and ($mobile) {
+    .profile-dex__hero {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+
+    .profile-dex__portrait {
+      min-height: 145px;
+    }
+
+    .profile-dex__section {
+      padding: 1rem;
+    }
+
+    .profile-dex__routes {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// 首页个人介绍卡片
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--secondary) 13%, transparent), transparent 42%),
+    color-mix(in srgb, var(--light) 92%, var(--highlight));
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--dark) 7%, transparent);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -1.75rem;
+    bottom: -2.1rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 1px solid color-mix(in srgb, var(--secondary) 25%, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .profile-card__label {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    font-family: var(--codeFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .profile-card__identity {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .profile-card__avatar {
+    display: grid;
+    flex: 0 0 3.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+    color: var(--light);
+    font-size: 1.45rem;
+    font-weight: 700;
+    box-shadow: 0 5px 14px color-mix(in srgb, var(--secondary) 24%, transparent);
+  }
+
+  .profile-card__identity h2 {
+    margin: 0 0 0.2rem;
+    color: var(--dark);
+    font-size: 1.15rem;
+    line-height: 1.35;
+
+    > a[role="anchor"] {
+      display: none;
+    }
+  }
+
+  .profile-card__identity p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .profile-card__bio {
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0;
+    color: var(--darkgray);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .profile-card__interests {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+
+    span {
+      padding: 0.22rem 0.58rem;
+      border: 1px solid color-mix(in srgb, var(--secondary) 28%, var(--lightgray));
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--highlight) 60%, transparent);
+      color: var(--darkgray);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
   }
 }
 
