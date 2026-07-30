@@ -688,7 +688,7 @@ body[data-slug="关于我/我的档案"] {
   display: block !important;
 }
 
-// 首页「最近更新」：轻量的文字列表，保留个人手账的安静感。
+// 首页「近期文章更新」：轻量的文字列表，保留个人手账的安静感。
 body[data-slug="index"] .recent-notes {
   margin-top: 2.25rem;
   padding-top: 1.5rem;
@@ -715,6 +715,8 @@ body[data-slug="index"] .recent-notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.7rem 1rem;
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   > ul.recent-ul > li.recent-li {
@@ -763,7 +765,12 @@ body[data-slug="index"] .recent-notes {
     }
 
     .meta {
-      display: none;
+      flex: 0 0 auto;
+      margin: 0;
+      color: var(--gray);
+      font-size: 0.78rem;
+      line-height: 1.3;
+      white-space: nowrap;
     }
   }
 

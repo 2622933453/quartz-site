@@ -258,13 +258,13 @@ plugins:
       links:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
-  - source: github:quartz-community/recent-notes
+  - source: ./plugins/recent-articles
     enabled: true
     options:
-      title: 最近更新
+      title: 近期文章更新
       limit: 4
-      linkToMore: false
-      showTags: false
+      excludeFolders:
+        - diary
       hideTagPages: true
       hideFolderPages: true
     layout:

@@ -1,0 +1,71 @@
+{
+  "name": "@local/recent-articles",
+  "version": "1.0.0",
+  "description": "Recent article list with folder exclusions for the homepage.",
+  "type": "module",
+  "license": "MIT",
+  "author": "xh-diary",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "recent-articles",
+    "displayName": "Recent Articles",
+    "description": "Displays recent articles while excluding selected folders.",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": false,
+    "defaultOrder": 50,
+    "defaultOptions": {
+      "title": "近期文章更新",
+      "limit": 4,
+      "excludeFolders": [
+        "diary"
+      ],
+      "hideTagPages": true,
+      "hideFolderPages": true
+    },
+    "components": {
+      "RecentArticles": {
+        "displayName": "Recent Articles",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 5
+      }
+    },
+    "optionSchema": {
+      "title": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "number"
+      },
+      "excludeFolders": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "hideTagPages": {
+        "type": "boolean"
+      },
+      "hideFolderPages": {
+        "type": "boolean"
+      }
+    }
+  }
+}
