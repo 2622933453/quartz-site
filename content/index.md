@@ -5,8 +5,8 @@ title: About
   <img id="about-lightbox-img" src="" alt="">
 </div>
 
-<a class="identity-portal internal" href="./关于我" aria-label="进入我的个人图鉴" data-no-popover="true">
-  <img src="./photos/who-am-i-entry-v2.png" alt="我是谁？进入 Ghiaccio 的个人图鉴">
+<a class="identity-portal internal" href="./关于我/我的档案" aria-label="进入我的档案" data-no-popover="true">
+  <img src="./photos/who-am-i-entry-v2.png" alt="我是谁？进入 Ghiaccio 的个人档案">
 </a>
 
 这里是我的个人网站，欢迎你~

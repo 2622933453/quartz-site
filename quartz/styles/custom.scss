@@ -163,24 +163,19 @@ footer {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E");
   }
 
-  .folder-container[data-folderpath="随想/index"] .folder-title::before {
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5zM16 8 2 22M17.5 15H9'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5zM16 8 2 22M17.5 15H9'/%3E%3C/svg%3E");
+  .folder-container[data-folderpath="关于我/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 22a8 8 0 0 1 16 0'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 22a8 8 0 0 1 16 0'/%3E%3C/svg%3E");
   }
 
-  .folder-container[data-folderpath="有关爱的一切/index"] .folder-title::before {
+  .folder-container[data-folderpath="关于爱/index"] .folder-title::before {
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
   }
 
-  .folder-container[data-folderpath="杂学考究/index"] .folder-title::before {
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 4.6L5.5 9.5l4.6 1.9L12 16l1.9-4.6 4.6-1.9-4.6-1.9zM5 3v4M3 5h4M19 17v4M17 19h4'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.9 4.6L5.5 9.5l4.6 1.9L12 16l1.9-4.6 4.6-1.9-4.6-1.9zM5 3v4M3 5h4M19 17v4M17 19h4'/%3E%3C/svg%3E");
-  }
-
-  .folder-container[data-folderpath="审美/index"] .folder-title::before {
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a10 10 0 1 1 10-10c0 2-1 3-3 3h-1.7a2 2 0 0 0-1.8 2.9l.3.6A2.4 2.4 0 0 1 14.6 22z'/%3E%3Ccircle cx='7.5' cy='10.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='10.5' cy='6.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='15.5' cy='7.5' r='1' fill='black' stroke='none'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a10 10 0 1 1 10-10c0 2-1 3-3 3h-1.7a2 2 0 0 0-1.8 2.9l.3.6A2.4 2.4 0 0 1 14.6 22z'/%3E%3Ccircle cx='7.5' cy='10.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='10.5' cy='6.5' r='1' fill='black' stroke='none'/%3E%3Ccircle cx='15.5' cy='7.5' r='1' fill='black' stroke='none'/%3E%3C/svg%3E");
+  .folder-container[data-folderpath="关于世界/index"] .folder-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20'/%3E%3C/svg%3E");
   }
 
   .folder-container[data-folderpath="关于本站/index"] .folder-title::before {
@@ -210,8 +205,8 @@ body[data-slug="留言板"] .breadcrumb-container {
   display: none !important;
 }
 
-// 独立的个人图鉴页不显示面包屑。
-body[data-slug="关于我"] .breadcrumb-container {
+// 独立的个人档案页不显示面包屑。
+body[data-slug="关于我/我的档案"] .breadcrumb-container {
   display: none !important;
 }
 
@@ -387,8 +382,8 @@ body[data-slug="index"] .markdown-preview-view {
   }
 }
 
-// 「关于我」页：保留图鉴式结构，但使用网站自身的日间 / 夜间配色。
-body[data-slug="关于我"] {
+// 「我的档案」页：保留卡片式结构，但使用网站自身的日间 / 夜间配色。
+body[data-slug="关于我/我的档案"] {
   .article-title {
     display: none;
   }
@@ -400,19 +395,6 @@ body[data-slug="关于我"] {
     background: color-mix(in srgb, var(--light) 96%, var(--highlight));
     color: var(--darkgray);
     box-shadow: 0 12px 30px color-mix(in srgb, var(--dark) 8%, transparent);
-  }
-
-  .profile-dex__topbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.7rem 1rem;
-    border-bottom: 1px solid var(--lightgray);
-    background: color-mix(in srgb, var(--highlight) 42%, transparent);
-    color: var(--secondary);
-    font-family: var(--codeFont);
-    font-size: 0.73rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
   }
 
   .profile-dex__hero {
@@ -514,10 +496,28 @@ body[data-slug="关于我"] {
   }
 
   .profile-dex__self-intro {
-    min-height: 9rem;
+    max-width: 74ch;
     color: var(--darkgray);
-    line-height: 1.8;
-    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.95;
+    text-align: justify;
+    text-justify: inter-ideograph;
+
+    p {
+      margin: 0;
+      text-indent: 0;
+      text-wrap: pretty;
+    }
+
+    p + p {
+      margin-top: 0.65rem;
+    }
+  }
+
+  .profile-dex__hello {
+    color: var(--secondary);
+    font-weight: 800;
+    letter-spacing: 0.04em;
   }
 
   .profile-dex__routes {
@@ -561,6 +561,12 @@ body[data-slug="关于我"] {
 
     .profile-dex__section {
       padding: 1rem;
+    }
+
+    .profile-dex__self-intro {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      text-align: left;
     }
 
     .profile-dex__routes {
