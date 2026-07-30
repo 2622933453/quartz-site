@@ -496,7 +496,7 @@ body[data-slug="关于我/我的档案"] {
   }
 
   .profile-dex__self-intro {
-    max-width: 74ch;
+    width: 100%;
     color: var(--darkgray);
     font-size: 1rem;
     line-height: 1.95;
@@ -515,8 +515,15 @@ body[data-slug="关于我/我的档案"] {
   }
 
   .profile-dex__hello {
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 3.55rem;
+    margin-right: 0.65rem;
     color: var(--secondary);
+    font-size: 1.7rem;
     font-weight: 800;
+    line-height: 1;
     letter-spacing: 0.04em;
   }
 
