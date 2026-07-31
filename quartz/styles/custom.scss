@@ -738,6 +738,17 @@ body[data-slug="index"] .recent-notes {
         background-color 160ms ease;
     }
 
+    .recent-card-link {
+      color: inherit;
+      background: color-mix(in srgb, var(--light) 88%, var(--highlight));
+      text-decoration: none;
+
+      &:focus-visible {
+        outline: 2px solid var(--secondary);
+        outline-offset: 2px;
+      }
+    }
+
     .section:hover {
       transform: translateY(-2px);
       border-color: var(--secondary);
@@ -753,15 +764,11 @@ body[data-slug="index"] .recent-notes {
         line-height: 1.45;
       }
 
-      a {
-        color: var(--darkgray);
-        background: transparent;
-        text-decoration: none;
-      }
+      color: var(--darkgray);
+    }
 
-      a:hover {
-        color: var(--secondary);
-      }
+    .recent-card-link:hover .desc {
+      color: var(--secondary);
     }
 
     .meta {

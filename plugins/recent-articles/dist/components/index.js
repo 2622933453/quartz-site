@@ -56,19 +56,17 @@ export const RecentArticles = (userOptions = {}) => {
           children: pages.map((page) => {
             const datedPage = withResolvedDateType(page, cfg)
             const date = getDate(datedPage)
+            const href = resolveRelative(pageSlug, page.slug)
             return jsx("li", {
               class: "recent-li",
-              children: jsxs("div", {
-                class: "section",
+              children: jsxs("a", {
+                href,
+                class: "section recent-card-link internal",
                 children: [
                   jsx("div", {
                     class: "desc",
                     children: jsx("h3", {
-                      children: jsx("a", {
-                        href: resolveRelative(pageSlug, page.slug),
-                        class: "internal",
-                        children: page.frontmatter?.title ?? "Untitled",
-                      }),
+                      children: page.frontmatter?.title ?? "Untitled",
                     }),
                   }),
                   date
