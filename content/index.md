@@ -7,6 +7,7 @@ title: About
 
 <a class="identity-portal internal" href="./关于我/我的档案" aria-label="进入我的档案" data-no-popover="true">
   <img src="./photos/who-am-i-entry-v2.png" alt="我是谁？进入 Ghiaccio 的个人档案">
+  <span class="identity-portal__hint" aria-hidden="true">点这里认识我 →</span>
 </a>
 
 这里是我的个人网站，欢迎你~
