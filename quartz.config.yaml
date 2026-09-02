@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - 关于本站
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
