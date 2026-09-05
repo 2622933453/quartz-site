@@ -24,6 +24,29 @@ const isSamePage = (url: URL): boolean => {
   return sameOrigin && samePath
 }
 
+const getHashTarget = (hash: string): HTMLElement | null => {
+  const encodedId = hash.startsWith("#") ? hash.slice(1) : hash
+  if (!encodedId) return null
+
+  const encodedTarget = document.getElementById(encodedId)
+  if (encodedTarget) return encodedTarget
+
+  try {
+    return document.getElementById(decodeURIComponent(encodedId))
+  } catch {
+    return null
+  }
+}
+
+const scrollToHash = (hash: string): boolean => {
+  const target = getHashTarget(hash)
+  if (!target) return false
+
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+  target.scrollIntoView({ behavior, block: "start" })
+  return true
+}
+
 const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined => {
   if (!isElement(target)) return
   if (target.attributes.getNamedItem("target")?.value === "_blank") return
@@ -113,8 +136,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
   // scroll into place and add history
   if (!isBack) {
     if (url.hash) {
-      const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-      el?.scrollIntoView()
+      scrollToHash(url.hash)
     } else {
       window.scrollTo({ top: 0 })
     }
@@ -161,8 +183,7 @@ function createRouter() {
       event.preventDefault()
 
       if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-        el?.scrollIntoView()
+        scrollToHash(url.hash)
         history.pushState({}, "", url)
         return
       }

@@ -356,6 +356,11 @@ a {
   border-top: 1px solid var(--lightgray);
 }
 
+[data-footnote-ref],
+.footnotes li {
+  scroll-margin-top: 2rem;
+}
+
 input[type="checkbox"] {
   transform: translateY(2px);
   color: var(--secondary);
