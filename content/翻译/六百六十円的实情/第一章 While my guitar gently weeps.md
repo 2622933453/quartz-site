@@ -1,5 +1,5 @@
 ![[t011.jpg]]
-「eccentric~eccentric~eccentric少年BOYYYYYYYYYY————！」[^1]
+「eccentric\~eccentric\~eccentric，少年BOYYYYYYYYYY————！」[^1]
 
 [^1]: 这里唱的是《「エキセントリック少年ボウイ」のテーマ》（eccentric少年BOY的主题曲）。这是日本综艺《ダウンタウンのごっつええ感じ》中的搞笑歌曲，1997年发行，松本人志作词、增田俊郎作曲。
 
