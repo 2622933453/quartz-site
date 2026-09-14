@@ -13,9 +13,19 @@ const formatNumericDate = (date) => {
 }
 
 const withResolvedDateType = (page, cfg) => {
+  // 翻译章节按最近新增或修改时间参与首页排序，其他文章沿用原日期规则。
+  if (isTranslation(page)) {
+    const created = page.dates?.created
+    const modified = page.dates?.modified
+    const latest =
+      created && modified ? (created > modified ? created : modified) : (modified ?? created)
+    return { ...page, defaultDateType: "modified", dates: { ...page.dates, modified: latest } }
+  }
   const defaultDateType = page.defaultDateType ?? cfg.defaultDateType
   return defaultDateType ? { ...page, defaultDateType } : page
 }
+
+const isTranslation = (page) => (page.slug ?? "").startsWith("翻译/")
 
 const defaultOptions = {
   title: "近期文章更新",
@@ -30,20 +40,29 @@ export const RecentArticles = (userOptions = {}) => {
     const options = { ...defaultOptions, ...userOptions }
     const excludedFolders = options.excludeFolders ?? []
     const sortByDate = byDateAndAlphabetical()
+    let hasTranslation = false
 
     const pages = allFiles
       .filter((page) => page.unlisted !== true)
       .filter((page) => !options.hideTagPages || !isTagPage(page.slug))
       .filter((page) => !options.hideFolderPages || !isFolderPath(page.slug ?? ""))
+      .filter(
+        (page) => !isTranslation(page) || !["封面", "目录"].includes(page.slug.split("/").at(-1)),
+      )
       .filter((page) => {
         const slug = page.slug ?? ""
-        return !excludedFolders.some(
-          (folder) => slug === folder || slug.startsWith(`${folder}/`),
-        )
+        return !excludedFolders.some((folder) => slug === folder || slug.startsWith(`${folder}/`))
       })
       .sort((left, right) =>
         sortByDate(withResolvedDateType(left, cfg), withResolvedDateType(right, cfg)),
       )
+      // 先合并翻译目录，再截取条数，让其他文章补足首页列表。
+      .filter((page) => {
+        if (!isTranslation(page)) return true
+        if (hasTranslation) return false
+        hasTranslation = true
+        return true
+      })
       .slice(0, options.limit)
 
     const pageSlug = fileData.slug ?? "index"
