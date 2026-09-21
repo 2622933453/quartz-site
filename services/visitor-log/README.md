@@ -57,3 +57,21 @@ npm run dev
 ## 停用
 
 将 `quartz.config.yaml` 中本插件设为 `enabled: false` 并重新发布网站即可停止浏览器上报。已有记录按保留期自动清理；立即停止服务可在 Cloudflare 禁用 Worker 路由。
+
+## Umami 历史记录
+
+后台的“近期访问”显示当前采集的 30 天记录；“Umami 历史”显示独立导入的数据。历史表不受自动清理规则影响。Umami 未保存原始 IP，因此历史记录显示“未记录”，只统计原始会话数，不计入不同 IP 数。两种来源独立展示，避免重叠时间段的访问量相加造成误解。
+
+Umami Cloud 的 **Settings → Data → Export** 可导出所选网站和时间范围的数据，下载链接发送至账号邮箱。需要原始逐次事件数据，聚合图表 CSV 不能还原逐条访问。保留导出文件在本目录 `.imports/` 或其他不受 Git 跟踪的位置，切勿提交访客数据。
+
+先执行迁移和验证：
+
+```powershell
+npm ci
+npm run db:remote
+node scripts/import-umami.mjs --events .imports/website_event.csv.gz --sessions .imports/session.csv.gz --website ea473a69-2b12-46a5-af9f-a5d4b6858fdb
+```
+
+文件名以实际导出为准；可读取普通 CSV、gzip CSV 和 JSON 数组。默认只校验并输出条数、时间范围、地区缺失数，不写入线上数据。日期缺少时区时按 UTC 解释，导入前须与 Umami 的同一时间范围统计核对。只有事件编号、网站编号、页面路径、有效访问时间明确的页面访问事件才会进入历史表。自定义事件和其他网站记录不导入；URL 参数、片段和任何 IP 字段不导入。
+
+检查报告 `.imports/last-report.json` 后，在同一命令末尾加 `--apply` 写入数据库，再执行 `npm run deploy` 发布历史查看功能。按“网站 ID + 原始事件 ID”去重，分批写入失败后可重新运行；重复执行不会增加访问量。时间相同的访问也能稳定分页。若导出文件的事件行已经包含地区信息，可省略 `--sessions`；否则须同时提供会话文件才能关联地区。不要用空的会话文件导入后再指望重复执行自动补全地区。

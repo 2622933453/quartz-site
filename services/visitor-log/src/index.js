@@ -140,6 +140,9 @@ async function visits(request, env, url) {
   if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < 32)
     return json({ error: "后台尚未配置管理密钥。" }, 503)
   if (!(await authorized(request, env))) return json({ error: "管理密钥不正确。" }, 401)
+  const source = url.searchParams.get("source") ?? "live"
+  if (!["live", "umami"].includes(source)) return json({ error: "无效的数据来源。" }, 400)
+  if (source === "umami") return history(env, url)
   const rawCursor = url.searchParams.get("before")
   const before = rawCursor === null ? Number.MAX_SAFE_INTEGER : Number(rawCursor)
   if (!Number.isSafeInteger(before) || before <= 0) return json({ error: "无效的分页参数。" }, 400)
@@ -155,10 +158,45 @@ async function visits(request, env, url) {
   ])
   const rows = results[0].results.slice(0, 100)
   return json({
+    source: "live",
     rows,
     nextCursor: results[0].results.length > 100 ? rows.at(-1).id : null,
     summary: results[1].results[0],
     retentionDays: Number(env.RETENTION_DAYS ?? 30),
+  })
+}
+
+async function history(env, url) {
+  const raw = url.searchParams.get("before")
+  let timestamp = Number.MAX_SAFE_INTEGER
+  let id = Number.MAX_SAFE_INTEGER
+  if (raw !== null) {
+    if (!/^\d+:\d+$/.test(raw)) return json({ error: "无效的分页参数。" }, 400)
+    ;[timestamp, id] = raw.split(":").map(Number)
+    if (![timestamp, id].every((n) => Number.isSafeInteger(n) && n > 0)) {
+      return json({ error: "无效的分页参数。" }, 400)
+    }
+  }
+  const results = await env.DB.batch([
+    env.DB.prepare(
+      `SELECT id, visited_at, origin, path, NULL AS ip, country, region, city
+      FROM umami_visits WHERE visited_at < ? OR (visited_at = ? AND id < ?)
+      ORDER BY visited_at DESC, id DESC LIMIT 101`,
+    ).bind(timestamp, timestamp, id),
+    env.DB.prepare(
+      `SELECT COUNT(*) AS views, NULL AS ips,
+      COUNT(DISTINCT NULLIF(session_id, '')) AS sessions,
+      MIN(visited_at) AS firstAt, MAX(visited_at) AS lastAt FROM umami_visits`,
+    ).bind(),
+  ])
+  const rows = results[0].results.slice(0, 100)
+  const last = rows.at(-1)
+  return json({
+    source: "umami",
+    rows,
+    nextCursor: results[0].results.length > 100 ? `${last.visited_at}:${last.id}` : null,
+    summary: results[1].results[0],
+    retentionDays: null,
   })
 }
 

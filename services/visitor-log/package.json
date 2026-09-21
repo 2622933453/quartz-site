@@ -10,6 +10,7 @@
     "db:remote": "wrangler d1 migrations apply DB --remote"
   },
   "devDependencies": {
+    "csv-parse": "^7.0.2",
     "wrangler": "^4.0.0"
   }
 }

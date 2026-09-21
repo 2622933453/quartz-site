@@ -10,6 +10,7 @@ function setup(t) {
   const db = new DatabaseSync(":memory:")
   t.after(() => db.close())
   db.exec(readFileSync(new URL("../migrations/0001_visits.sql", import.meta.url), "utf8"))
+  db.exec(readFileSync(new URL("../migrations/0002_umami_history.sql", import.meta.url), "utf8"))
   const env = {
     ALLOWED_ORIGINS: origin,
     ADMIN_TOKEN: key,
@@ -140,4 +141,40 @@ test("storage failures are reported without disclosing internals or pretending t
   const response = await worker.fetch(event(), env)
   assert.equal(response.status, 503)
   assert.equal((await response.text()).includes("sensitive"), false)
+})
+
+test("Umami history stays private, survives retention, and paginates by historical time", async (t) => {
+  const { env, db } = setup(t)
+  const insert = db.prepare(`INSERT INTO umami_visits
+    (website_id,event_id,session_id,visited_at,origin,path,imported_at) VALUES (?,?,?,?,?,?,?)`)
+  const oldTime = Date.now() - 120 * 86400000
+  // Insert out of chronology and include ties, as incremental imports may do.
+  for (let i = 0; i < 105; i++)
+    insert.run(
+      "site",
+      "event-" + i,
+      "session-" + (i % 2),
+      oldTime + (i % 5),
+      origin,
+      "/old/" + i,
+      Date.now(),
+    )
+  await worker.fetch(event(), env)
+  assert.equal((await worker.fetch(admin("wrong", "?source=umami"), env)).status, 401)
+  const first = await (await worker.fetch(admin(key, "?source=umami"), env)).json()
+  assert.equal(first.rows.length, 100)
+  assert.equal(first.rows[0].path, "/old/104")
+  assert.equal(first.summary.views, 105)
+  assert.equal(first.summary.ips, null)
+  assert.equal(first.summary.sessions, 2)
+  assert.equal(first.rows[0].ip, null)
+  const second = await (
+    await worker.fetch(admin(key, "?source=umami&before=" + first.nextCursor), env)
+  ).json()
+  assert.equal(second.rows.length, 5)
+  assert.equal(new Set([...first.rows, ...second.rows].map((r) => r.id)).size, 105)
+  assert.equal((await (await worker.fetch(admin(), env)).json()).summary.views, 1)
+  await worker.scheduled({}, env)
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM umami_visits").get().n, 105)
+  assert.equal((await worker.fetch(admin(key, "?source=umami&before=bad"), env)).status, 400)
 })
