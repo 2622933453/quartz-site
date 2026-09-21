@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS visits (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  event_id TEXT NOT NULL UNIQUE,
+  visited_at INTEGER NOT NULL,
+  origin TEXT NOT NULL,
+  path TEXT NOT NULL,
+  ip TEXT NOT NULL,
+  country TEXT NOT NULL DEFAULT '',
+  region TEXT NOT NULL DEFAULT '',
+  city TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS visits_visited_at ON visits(visited_at);

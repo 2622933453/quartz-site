@@ -1,0 +1,39 @@
+{
+  "name": "@local/visitor-log",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./components": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "visitor-log",
+    "displayName": "Private Visitor Log",
+    "description": "Private IP and approximate location records with SPA navigation support.",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": false,
+    "defaultOptions": {
+      "endpoint": ""
+    },
+    "components": {
+      "VisitorLog": {
+        "displayName": "Visitor Log",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 90
+      }
+    },
+    "optionSchema": {
+      "endpoint": {
+        "type": "string",
+        "description": "HTTPS Worker collection URL; empty disables collection."
+      }
+    }
+  }
+}

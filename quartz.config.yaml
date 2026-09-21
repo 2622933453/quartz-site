@@ -46,6 +46,14 @@ configuration:
         highlight: rgba(131, 165, 152, 0.18)
         textHighlight: "#d7992155"
 plugins:
+  # 私人访问记录；空值时不发送数据，管理密钥仅保存在 Worker。
+  - source: ./plugins/visitor-log
+    enabled: true
+    options:
+      endpoint: https://visits.xh-diary.me/collect
+    layout:
+      position: afterBody
+      priority: 90
   # 本地修改版：补上「git 首次提交时间 → created」，这样新文章无需手写 created frontmatter
   - source: ./plugins/created-modified-date
     enabled: true
