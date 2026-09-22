@@ -14,7 +14,7 @@ button{font:inherit;cursor:pointer;border:1px solid var(--accent);border-radius:
 @media(max-width:640px){main{margin:28px auto;padding:0 18px}.card{padding:20px}h1{font-size:26px}#summary{gap:30px}.number{font-size:28px}}
 </style><script src="/dashboard.js" defer></script></head>
 <body><main><header><div><div class="eyebrow">GHIACCIO / PRIVATE</div><h1>来访记录</h1><p>看看哪些文章被读过，读者来自哪里。</p></div><button id="logout" class="secondary" hidden>退出</button></header>
-<form id="login" class="card"><label for="token">管理密钥</label><input id="token" type="password" required minlength="32" maxlength="256" autocomplete="current-password" placeholder="输入你的管理密钥"><button type="submit">查看记录</button><p class="foot">密钥仅保存在当前页面内存中，刷新或退出后需重新输入。</p></form>
+<form id="login" class="card"><label for="token">管理密钥</label><input id="token" type="password" required minlength="6" maxlength="256" autocomplete="current-password" placeholder="输入你的管理密钥"><button type="submit">查看记录</button><p class="foot">密钥仅保存在当前页面内存中，刷新或退出后需重新输入。</p></form>
 <p id="status" role="status" aria-live="polite"></p>
 <section id="records" hidden><nav class="toolbar" aria-label="记录来源"><div><button id="live" aria-pressed="true">近期访问</button> <button id="umami" class="secondary" aria-pressed="false">Umami 历史</button></div></nav><div class="card" id="summary"><div><span class="caption" id="period">最近 30 天 · 页面访问</span><span class="number" id="views">—</span></div><div><span class="caption" id="identity-label">不同 IP 数</span><span class="number" id="ips">—</span></div></div>
 <div class="toolbar"><span class="caption">最新访问在前 · 时间为北京时间</span><button id="refresh" class="secondary">刷新</button></div>

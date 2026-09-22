@@ -25,7 +25,7 @@ function cutoff(env) {
 }
 
 async function authorized(request, env) {
-  if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < 32) return false
+  if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < 6) return false
   const token = request.headers.get("Authorization")?.replace(/^Bearer /, "") ?? ""
   if (token.length > 256) return false
   const encoder = new TextEncoder()
@@ -137,7 +137,7 @@ async function visits(request, env, url) {
   if (await limited(env.ADMIN_LIMITER, request.headers.get("CF-Connecting-IP") ?? "unknown")) {
     return json({ error: "请求太频繁，请一分钟后再试。" }, 429)
   }
-  if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < 32)
+  if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < 6)
     return json({ error: "后台尚未配置管理密钥。" }, 503)
   if (!(await authorized(request, env))) return json({ error: "管理密钥不正确。" }, 401)
   const source = url.searchParams.get("source") ?? "live"

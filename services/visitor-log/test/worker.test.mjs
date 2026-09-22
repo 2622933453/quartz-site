@@ -74,6 +74,17 @@ test("private API rejects absent/wrong/unconfigured credentials; responses are n
   assert.equal((await page.text()).includes(key), false)
 })
 
+test("six-character credentials authenticate without allowing incorrect or missing keys", async (t) => {
+  const { env } = setup(t)
+  env.ADMIN_TOKEN = "654321"
+  assert.equal((await worker.fetch(admin("654321"), env)).status, 200)
+  assert.equal((await worker.fetch(admin("654320"), env)).status, 401)
+  assert.equal((await worker.fetch(admin(""), env)).status, 401)
+  assert.equal((await worker.fetch(admin("12345"), { ...env, ADMIN_TOKEN: "12345" })).status, 503)
+  const page = await worker.fetch(new Request("https://visits.example/admin"), env)
+  assert.match(await page.text(), /minlength="6"/)
+})
+
 test("collect validates origin, path, UUID, IP and payload limit", async (t) => {
   const { env, db } = setup(t)
   for (const badOrigin of ["https://evil.example", "null", ""]) {
