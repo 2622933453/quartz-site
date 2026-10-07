@@ -47,6 +47,8 @@ function resolveRelative(current, target) {
 function folderOf(slug) {
   const parts = simplifySlug(slug).split("/")
   parts.pop()
+  // Keep diary navigation continuous across monthly folders.
+  if (parts[0]?.toLowerCase() === "diary") return parts[0].toLowerCase()
   return parts.join("/")
 }
 function titleOf(file) {
@@ -133,7 +135,7 @@ const PageNavigation = (opts) => {
     const currentSimple = simplifySlug(currentSlug)
     const folder = folderOf(currentSlug)
 
-    // Candidates: published pages in the same folder that aren't folder indexes.
+    // Candidates: pages in the same folder (or Diary tree), excluding indexes.
     const candidates = allFiles.filter((f) => {
       if (!f.slug) return false
       if (f.unlisted === true) return false

@@ -388,7 +388,7 @@ const CusdisComments = (opts = {}) => {
       id: "cusdis_thread",
       "data-host": host,
       "data-app-id": appId,
-      "data-page-id": slug,
+      "data-page-id": slug.replace(/^(diary)\/\d{4}-\d{2}\/(\d{4}-\d{2}-\d{2})$/i, "$1/$2"),
       "data-page-url": pageUrl(cfg, fileData.slug),
       "data-page-title": pageTitle(fileData),
       "data-script-src": `${host}/js/cusdis.es.js`,
