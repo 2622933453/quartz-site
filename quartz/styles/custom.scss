@@ -87,6 +87,10 @@ footer {
   vertical-align: top;
 }
 
+body[data-slug="翻译/六百六十円的实情/目录"] a[role="anchor"] {
+  display: none;
+}
+
 body[data-slug="翻译/六百六十円的实情/目录"]
   .markdown-preview-view
   > h6:not(:first-of-type) {

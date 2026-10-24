@@ -52,12 +52,21 @@ function folderOf(slug) {
   return parts.join("/")
 }
 function titleOf(file) {
-  return file.frontmatter?.title ?? simplifySlug(file.slug ?? "").split("/").pop() ?? "Untitled"
+  return (
+    file.frontmatter?.title ??
+    simplifySlug(file.slug ?? "")
+      .split("/")
+      .pop() ??
+    "Untitled"
+  )
 }
 // Sort key: prefer an ISO date (YYYY-MM-DD) parsed from the filename (diary entries),
 // fall back to the page's created/modified/published date.
 function sortKey(file) {
-  const seg = simplifySlug(file.slug ?? "").split("/").pop() ?? ""
+  const seg =
+    simplifySlug(file.slug ?? "")
+      .split("/")
+      .pop() ?? ""
   const m = seg.match(/^(\d{4})-(\d{2})-(\d{2})/)
   if (m) {
     const t = Date.parse(`${m[1]}-${m[2]}-${m[3]}T00:00:00Z`)
@@ -147,8 +156,10 @@ const PageNavigation = (opts) => {
     // The current page must be part of the navigable set.
     if (!candidates.some((f) => simplifySlug(f.slug) === currentSimple)) return null
 
-    // Newest first (descending by date). Going down the list = older = 下一篇.
+    // Books can override the order; other articles keep newest-first navigation.
     candidates.sort((a, b) => {
+      const customOrder = options.sort?.(a, b)
+      if (customOrder !== undefined) return customOrder
       const d = sortKey(b) - sortKey(a)
       if (d !== 0) return d
       return simplifySlug(b.slug).localeCompare(simplifySlug(a.slug))
@@ -157,10 +168,10 @@ const PageNavigation = (opts) => {
     const idx = candidates.findIndex((f) => simplifySlug(f.slug) === currentSimple)
     if (idx === -1) return null
 
-    const newer = idx > 0 ? candidates[idx - 1] : null // 上一篇 (更新的一篇)
-    const older = idx < candidates.length - 1 ? candidates[idx + 1] : null // 下一篇 (更早的一篇)
+    const previous = idx > 0 ? candidates[idx - 1] : null
+    const next = idx < candidates.length - 1 ? candidates[idx + 1] : null
 
-    if (!newer && !older) return null
+    if (!previous && !next) return null
 
     const renderLink = (file, label, dir) =>
       h(
@@ -178,11 +189,11 @@ const PageNavigation = (opts) => {
     return h(
       "nav",
       { class: cls, "aria-label": "文章导航" },
-      newer
-        ? renderLink(newer, options.prevLabel, "prev")
+      previous
+        ? renderLink(previous, options.prevLabel, "prev")
         : h("span", { class: "page-nav-link page-nav-empty" }),
-      older
-        ? renderLink(older, options.nextLabel, "next")
+      next
+        ? renderLink(next, options.nextLabel, "next")
         : h("span", { class: "page-nav-link page-nav-empty" }),
     )
   }

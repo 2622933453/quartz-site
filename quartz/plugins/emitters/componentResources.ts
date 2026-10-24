@@ -6,6 +6,9 @@ import { QuartzEmitterPlugin } from "../types"
 import spaRouterScript from "../../components/scripts/spa.inline"
 // @ts-ignore
 import popoverScript from "../../components/scripts/popover.inline"
+// @ts-ignore
+import footnotesScript from "../../components/scripts/footnotes.inline"
+import footnotesStyle from "../../components/styles/footnotes.scss"
 import baseStyles from "../../styles/base.scss"
 import customStyles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
@@ -83,6 +86,9 @@ async function joinScripts(scripts: string[]): Promise<string> {
 
 function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentResources) {
   const cfg = ctx.cfg.configuration
+
+  componentResources.afterDOMLoaded.push(footnotesScript)
+  componentResources.css.push(footnotesStyle)
 
   // popovers
   if (cfg.enablePopovers) {
