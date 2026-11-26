@@ -12,7 +12,7 @@ document.addEventListener("nav", (e) => {
     }
   })
 
-  const ul = document.getElementById("list-0")
+  const ul = document.getElementById("backlinks-list-0")
   if (!ul) return
 
   const end = ul.querySelector(".overflow-end")
